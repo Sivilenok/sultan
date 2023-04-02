@@ -9,12 +9,12 @@ interface IProps {
   className?: string;
 }
 
-export const ProductList = ({ className }: IProps) => {
+export const ProductList = ({ className, products }: IProps) => {
   const popularProducts = useAppSelector((state) => state.products.popular);
 
   return (
     <div className={`${styles.productslist} ${styles.list} ${className}`}>
-      {popularProducts.map((product: Product) => (
+      {products.map((product: Product) => (
         <Wrapper key={product.id}>
           <ProductItem className={styles.list} {...product} />
         </Wrapper>

@@ -16,12 +16,10 @@ const productsSlice = createSlice({
   initialState,
   reducers: {
     setAllProducts(state, action) {
-        console.log('action.payload:', action.payload);
       state.all = action.payload;
     },
     setPopularProducts(state, action) {
         state.popular = action.payload.filter((product: Product) => product.isPopular === true);
-          console.log(state.popular);
       },      
   },
 });

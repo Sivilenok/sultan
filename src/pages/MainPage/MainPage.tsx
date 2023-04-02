@@ -8,6 +8,7 @@ import {
 } from "../../components";
 import Wrapper from "../../components/Wrapper/Wrapper";
 import { Product } from "../../services/products";
+import { selectAllProducts, setPopularProducts, useAppDispatch, useAppSelector } from "../../store";
 import styles from "./styles.module.scss";
 
 interface IProps {
@@ -15,8 +16,8 @@ interface IProps {
 }
 
 export const MainPage = ({ products }: IProps) => {
-  const popularProducts = products.filter((product) => product.isPopular);
-  console.log(products);
+  const popularProducts = useAppSelector(selectAllProducts)
+  const dispatch = useAppDispatch();
   return (
     <main className={styles.main}>
       <Banner isBreadcrumbHidden={true} />

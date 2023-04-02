@@ -1,0 +1,201 @@
+.productCard {
+  display: flex;
+}
+
+.productDetails {
+  padding: 40px;
+}
+
+.inStock {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  color: #1fd85d;
+}
+
+.size {
+  padding: 0 15px;
+  color: #3f4e65;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  background: url("../../assets/icons/battle.svg ") no-repeat;
+}
+
+.title {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 30px;
+  line-height: 45px;
+  color: #111111;
+  padding: 10px 0;
+}
+
+.wrapperUp {
+  display: flex;
+  padding: 15px 0;
+}
+
+.price {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 30px;
+  line-height: 39px;
+  color: #111111;
+}
+
+.count {
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+}
+
+.counter {
+  width: 34px;
+  height: 23px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 198, 80, 0.3) 0%,
+    rgba(254, 202, 110, 0.3) 97.25%
+  );
+  border-radius: 1000px;
+  color: #3f4e65;
+}
+
+.quantity {
+  padding: 0 20px;
+}
+
+.btn {
+  width: 184px;
+  height: 59px;
+  background: #ffc85e;
+  border-radius: 80px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: 0.15em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #ffc85e;
+  }
+}
+
+.share {
+  width: 77px;
+  height: 77px;
+  background: #ffffff;
+  box-shadow: 0px 15px 70px -11px rgba(43, 28, 1, 0.04);
+  border-radius: 10px;
+}
+
+.wrapperDown {
+  display: flex;
+  gap: 10px;
+  padding: 20px 0;
+}
+
+.info {
+  width: 316px;
+  height: 77px;
+  background: #ffffff;
+  box-shadow: 0px 15px 70px -11px rgba(43, 28, 1, 0.04);
+  border-radius: 10px;
+  text-align: center;
+  padding-top: 20px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #3f4e65;
+}
+
+.priceList {
+  width: 186px;
+  height: 77px;
+  color: #3f4e65;
+  background: #ffffff;
+  box-shadow: 0px 15px 70px -11px rgba(43, 28, 1, 0.04);
+  border-radius: 10px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.desc {
+  padding: 15px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 21px;
+  color: #3f4e65;
+  padding-bottom: 5px;
+}
+
+.details {
+  position: relative;
+  padding: 20px 0;
+  background: none;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #111111;
+  cursor: pointer;
+}
+
+.specText {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 18px;
+  color: #3f4e65;
+  padding-bottom: 20px;
+}
+
+.separatorTwo {
+  width: 269.5px;
+  height: 0;
+  border: 1px dashed #3f4e65;
+  opacity: 0.3;
+}
+
+.span {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  color: #111111;
+  padding-left: 5px;
+}
+
+.arrow {
+  position: absolute;
+  bottom: 28px;
+  left: 80px;
+}
+
+.arrowSpec {
+  position: absolute;
+  bottom: 28px;
+  left: 133px;
+}
+
+.picture {
+  width: 664px;
+  height: 471px;
+}

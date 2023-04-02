@@ -1,0 +1,99 @@
+.item {
+  width: 289px;
+  height: 134px;
+  background: #ffffff;
+  box-shadow: 0px 14px 39px -11px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #3f4e65;
+  }
+
+}
+
+.wrap {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.picture {
+  position: relative;
+  width: 35px;
+  height: 35px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 198, 80, 0.3) 0%,
+    rgba(254, 202, 110, 0.3) 97.25%
+  );
+  border-radius: 100px;
+}
+
+.pic {
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  background-image: url("../../assets/icons/order-page/payment.svg ");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.title {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #111111;
+}
+
+.subtitle {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #3f4e65;
+  padding-top: 15px;
+}
+
+.wrapper {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  padding-top: 25px;
+}
+
+.number {
+  width: 35px;
+  height: 35px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 198, 80, 0.3) 0%,
+    rgba(254, 202, 110, 0.3) 97.25%
+  );
+  border-radius: 50px;
+  text-align: center;
+  line-height: 35px;
+}
+
+.text {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #111111;
+  padding-top: 30px;
+}
+
+.comments {
+  width: 289px;
+  height: 324px;
+  background: #ededed;
+  border-radius: 36px;
+  resize: none;
+  padding: 20px 30px;
+  opacity: 0.6;
+  margin-top: 10px;
+}

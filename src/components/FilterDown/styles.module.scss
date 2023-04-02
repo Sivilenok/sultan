@@ -1,0 +1,155 @@
+.title {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  padding-bottom: 15px;
+}
+
+.subtitle {
+  padding-bottom: 16px;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 21px;
+  color: #3f4e65;
+}
+
+.count {
+  padding-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.counter {
+  width: 100px;
+  height: 23px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 198, 80, 0.3) 0%,
+    rgba(254, 202, 110, 0.3) 97.25%
+  );
+  border-radius: 1000px;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 15px;
+  color: #3f4e65;
+}
+
+.quantity {
+  padding: 0 10px;
+}
+
+.search {
+  width: 238px;
+  height: 59px;
+  background-color: #ededed;
+  border-radius: 36px;
+  color: #5c6370;
+  padding: 20px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-repeat: no-repeat;
+  background-position: calc(100% - 10px) 50%;
+  background-image: url("../../assets/icons/search.svg ");
+  cursor: pointer;
+  &:hover {
+    box-shadow: 0 0 10px #ffc85e;
+  }
+}
+.sort {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0 30px;
+}
+
+.sorting {
+  display: flex;
+  gap: 5px;
+  position: relative;
+}
+
+.arrow {
+  position: absolute;
+  bottom: 10px;
+  left: 85px;
+}
+
+.text {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  color: #3f4e65;
+  padding: 5px 0;
+}
+
+.name {
+  position: absolute;
+  cursor: pointer;
+}
+
+.sortList {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 18px;
+  color: #3f4e65;
+}
+
+.manufacturers {
+  padding-top: 15px;
+}
+
+.separator {
+  padding: 10px 0;
+  opacity: 0.3;
+  border-bottom: 1px dashed #3f4e65;
+}
+
+input[type="checkbox"] {
+  width: 10px;
+  height: 10px;
+  border: 0.5px solid #3f4e65;
+  border-radius: 1px;
+  margin: 0 10px 16px 0;
+}
+
+.manName {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  color: #3f4e65;
+}
+
+.btn {
+  width: 169px;
+  height: 59px;
+  background: #ffc85e;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  border-radius: 79px;
+  color: #ffffff;
+  &:hover {
+    box-shadow: 0 0 10px #ffc85e;
+  }
+}
+
+.deleteBtn {
+  cursor: pointer;
+  &:hover {
+    border-radius: 79px;
+    box-shadow: 0 0 10px #ffc85e;
+  }
+}
+
+.btnWrap {
+  display: flex;
+  gap: 10px;
+}

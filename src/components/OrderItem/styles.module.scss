@@ -1,0 +1,38 @@
+.order {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px dashed rgba(63, 78, 101, 0.1);
+}
+
+.price {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 26px;
+  color: #111111;
+}
+
+.picture {
+  width: 217px;
+  height: 191px;
+}
+
+.size {
+  padding: 0 15px;
+  background: url("../../assets/icons/battle.svg ") no-repeat;
+}
+
+.name {
+  padding: 10px 0;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: #111111;
+}
+
+.wrapper {
+  align-items: center;
+}

@@ -1,0 +1,107 @@
+.sale {
+  height: 500px;
+  background: linear-gradient(0deg, #b7bfca 0%, #bdc7d0 65.9%, #bdc7d1 100%);
+  border-radius: 10px;
+}
+
+.wrapper {
+  display: flex;
+  position: relative;
+  top: 0;
+}
+
+.picture {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.wrapperLeft {
+  position: absolute;
+  top: 60px;
+  left: 110px;
+  z-index: 1;
+}
+
+.rightIcon {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(40%, 250%);
+  cursor: pointer;
+}
+
+.leftIcon {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(-40%, 250%);
+  cursor: pointer;
+}
+
+.subtitle {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #ffffff;
+  padding: 10px 0;
+}
+
+.title {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 70px;
+  line-height: 77px;
+  color: #ffffff;
+  padding: 25px 0;
+}
+
+.descr {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  color: #ffffff;
+  padding: 15px 0;
+}
+
+.btn {
+  width: 343px;
+  height: 90px;
+  background: #ffc85e;
+  border-radius: 79px;
+  color: #ffffff;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0.05em;
+  margin: 25px 0;
+
+  &:hover {
+    box-shadow: 0 0 10px #ffc85e;
+  }
+}
+
+.dotsContainer {
+  display: flex;
+  gap: 6px;
+}
+
+.dot {
+  position: relative;
+  background: #3f4e65;
+  opacity: 0.1;
+  width: 16px;
+  height: 7px;
+  top: 470px;
+  left: 50%;
+  border-radius: 100px;
+  &:active {
+    width: 26px;
+    background: #ffffff;
+  }
+}

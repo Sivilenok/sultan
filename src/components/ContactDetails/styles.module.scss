@@ -1,0 +1,98 @@
+.title {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #111111;
+}
+
+.wrap {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  padding-bottom: 30px;
+}
+
+.number {
+  width: 35px;
+  height: 35px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 198, 80, 0.3) 0%,
+    rgba(254, 202, 110, 0.3) 97.25%
+  );
+  border-radius: 50px;
+  text-align: center;
+  line-height: 35px;
+}
+
+.name {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #111111;
+  padding-bottom: 10px;
+}
+
+.search {
+  width: 289px;
+  height: 59px;
+  background-color: #ededed;
+  border-radius: 36px;
+  color: #5c6370;
+  opacity: 0.6;
+  padding: 20px 30px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin-bottom: 15px;
+  cursor: pointer;
+  &:hover {
+    box-shadow: 0 0 10px #ffc85e;
+  }
+}
+
+.item {
+    padding-bottom: 45px;
+}
+
+.searchTown {
+  width: 289px;
+  height: 59px;
+  background-color: #ededed;
+  border-radius: 36px;
+  color: #5c6370;
+  opacity: 0.6;
+  padding: 20px 30px;
+  margin-bottom: 15px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  background-image: url('../../assets/icons/down.svg ');
+  background-position: right 30px center;
+  background-repeat: no-repeat;
+  padding-right: 24px;
+  &:hover {
+    box-shadow: 0 0 10px #ffc85e;
+  }
+}
+
+.btn {
+    width: 289px;
+    height: 59px;
+    background: #ffc85e;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    border-radius: 79px;
+    color: #ffffff;
+    &:hover {
+      box-shadow: 0 0 10px #ffc85e;
+    }
+  }
+  

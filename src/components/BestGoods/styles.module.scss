@@ -1,0 +1,63 @@
+.bestGoods {
+  padding: 100px 0;
+}
+
+.title {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 48px;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  padding-top: 15px;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 24px;
+  color: #3f4e65;
+}
+
+.wrapper {
+  display: flex;
+  gap: 10px;
+  padding: 50px 0;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+}
+
+.imagesContainer {
+    display: flex;
+}
+
+.picture {
+  flex-shrink: 0;
+  padding: 15px 15px;
+  background: #ffffff;
+  box-shadow: 0px 14px 39px -11px rgba(0, 0, 0, 0.06);
+  border-radius: 10px;
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.dotsContainer {
+  display: flex;
+  gap: 6px;
+}
+
+.dot {
+  position: relative;
+  background: #3f4e65;
+  opacity: 0.1;
+  width: 16px;
+  height: 7px;
+  left: 50%;
+  border-radius: 100px;
+  &:active {
+    width: 26px;
+    background: #ffc85e;
+  }
+}

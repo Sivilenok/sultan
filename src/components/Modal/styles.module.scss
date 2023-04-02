@@ -1,0 +1,34 @@
+.screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.window {
+    position: relative;
+    width: 735px;
+    height: 424px;
+    background: #ffffff;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+
+.closeButton {
+    position: absolute;
+    top: 36px;
+    right: 36px;
+    width: 12px;
+    height: 12px;
+    color: #FFC85E;
+    background: none;
+}

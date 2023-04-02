@@ -1,0 +1,82 @@
+.banner {
+  position: relative;
+  box-sizing: border-box;
+  height: 796px;
+  margin-bottom: 50px;
+  background: url("../../assets/img/banner.png") no-repeat;
+  background-size: cover;
+}
+
+.banner-shifted {
+  margin-top: -90px;
+}
+
+.wrapBanner {
+  position: absolute;
+  top: 98px;
+}
+
+.title {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 70px;
+  line-height: 77px;
+  color: #ffffff;
+  padding-bottom: 40px;
+}
+
+.subTitle {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 30px;
+  line-height: 45px;
+  text-transform: uppercase;
+  color: #ffffff;
+  padding-bottom: 60px;
+}
+
+.btn {
+  width: 300px;
+  height: 95px;
+  background: #ffc85e;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  border-radius: 80px;
+  letter-spacing: 0.15em;
+  color: #ffffff;
+  &:hover {
+    box-shadow: 0 0 10px #ffc85e;
+  }
+}
+
+.wrapperBtn {
+  display: flex;
+  padding-top: 90px;
+  align-items: center;
+}
+
+.btnMini {
+  width: 39px;
+  height: 39px;
+  background: #ffc856;
+  margin-right: 10px;
+  border-radius: 1000px;
+  &:hover {
+    box-shadow: 0 0 10px #ffc85e;
+  }
+}
+
+p {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  color: #ffffff;
+  padding-right: 35px;
+}

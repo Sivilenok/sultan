@@ -1,0 +1,36 @@
+nav {
+  padding: 45px 0;
+}
+
+.breadcrumb {
+  display: flex;
+}
+
+.item {
+  display: flex;
+}
+
+.breadcrumbLink {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+  color: #3f4e65;
+}
+
+.text {
+  color: #3f4e65;
+  opacity: 0.5;
+}
+
+.separator {
+  width: 0px;
+  height: 16px;
+  opacity: 0.3;
+  border: 1px dashed #3f4e65;
+  margin: 0 10px;
+}
+
+span {
+  color: #3f4e65;
+}

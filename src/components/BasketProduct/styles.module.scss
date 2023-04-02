@@ -1,0 +1,77 @@
+.basketProduct {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 50px 0;
+  border-bottom: 1px dashed rgba(63, 78, 101, 0.1);
+}
+
+.separator {
+  border: 1px dashed rgba(63, 78, 101, 0.1);
+  height: 49px;
+  margin: 0 25px;
+}
+
+.picture {
+  width: 281px;
+  height: 191px;
+}
+
+.count {
+  display: flex;
+  align-items: center;
+}
+
+.counter {
+  width: 34px;
+  height: 23px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 198, 80, 0.3) 0%,
+    rgba(254, 202, 110, 0.3) 97.25%
+  );
+  border-radius: 1000px;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 15px;
+  color: #3f4e65;
+}
+
+.quantity {
+  padding: 0 10px;
+}
+
+.size {
+  padding: 0 15px;
+  background: url("../../assets/icons/battle.svg ") no-repeat;
+}
+
+.name {
+  padding: 10px 0;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 36px;
+  color: #111111;
+}
+
+.wrapper {
+  padding-right: 65px;
+}
+
+.price {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 39px;
+  color: #111111;
+}
+
+.deleteBtn {
+  cursor: pointer;
+  &:hover {
+    border-radius: 79px;
+    box-shadow: 0 0 10px #ffc85e;
+  }
+}

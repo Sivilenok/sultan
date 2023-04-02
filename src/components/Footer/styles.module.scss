@@ -1,0 +1,132 @@
+.footer {
+  margin-top: 100px;
+  padding: 70px 0;
+  background: #3f4e65;
+  height: 500px;
+}
+
+.text {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+  color: #ffffff;
+  padding-top: 20px;
+}
+
+.subtext {
+  padding-top: 45px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #ffffff;
+}
+
+.input {
+  width: 282px;
+  height: 59px;
+  padding: 20px;
+  margin: 14px 0;
+  background: #ffffff;
+  border-radius: 36px;
+  color: #5c6370;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-repeat: no-repeat;
+  background-position: calc(100% - 10px) 50%;
+  background-image: url("../../assets/icons/input-btn.svg ");
+  cursor: pointer;
+  &:hover {
+    box-shadow: 0 0 10px #ffc85e;
+  }
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.itemWrap {
+  display: flex;
+  gap: 120px;
+  padding: 0 35px;
+}
+
+.title {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 21px;
+  color: #ffffff;
+  padding-bottom: 5px;
+}
+
+.wrapperLink {
+  padding: 10px 0;
+}
+
+.linksFooter {
+  padding-top: 20px;
+}
+
+.links {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  color: #ffffff;
+  &:hover {
+    box-shadow: 0 0 10px #ffc85e;
+  }
+}
+
+.btn {
+  width: 214px;
+  height: 59px;
+  background: #ffc85e;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  border-radius: 79px;
+  color: #ffffff;
+  margin: 20px 0;
+  &:hover {
+    box-shadow: 0 0 10px #ffc85e;
+  }
+}
+
+.variants {
+  display: flex;
+  padding-top: 15px;
+  gap: 10px;
+}
+
+.social {
+  transition: transform 0.1s ease;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.1);
+    border-radius: 1000px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.contact {
+  padding: 5px 0;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 18px;
+  color: #ffffff;
+}
+
+.payments {
+  display: flex;
+  gap: 5px;
+  padding: 20px 0;
+}
+
+

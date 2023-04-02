@@ -1,0 +1,50 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.currentPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10px;
+  height: 24px;
+  margin: 10px;
+  font-size: 16px;
+  font-style: normal;
+  line-height: 21px;
+  color: #3F4E65;
+  background-color: transparent;
+  border: none;
+}
+
+.currentPage.active {
+  width: 35px;
+  height: 35px;  background: linear-gradient(90deg, rgba(255, 198, 80, 0.3) 0%, rgba(254, 202, 110, 0.3) 97.25%);
+  border-radius: 1000px;  
+}
+
+.prevArrow,
+.nextArrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10px;
+  height: 24px;
+  text-align: center;
+  background-color: transparent;
+  border: none;
+}
+
+.prevArrow::before {
+  content: '<';
+  color: #FFC85E;
+
+}
+
+.nextArrow::before {
+  content: '>';
+  color: #FFC85E;
+}

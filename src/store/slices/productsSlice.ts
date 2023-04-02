@@ -21,6 +21,7 @@ const productsSlice = createSlice({
     },
     setPopularProducts(state, action) {
         state.popular = action.payload.filter((product: Product) => product.isPopular === true);
+          console.log(state.popular);
       },      
   },
 });

@@ -1,9 +1,14 @@
 import { pencil } from "../../assets";
+import { Product } from "../../services/products";
 import products from "../../services/products.json";
 import { OrderItem } from "../OrderItem/OrderItem";
 import styles from "./styles.module.scss";
 
-export const OrderList = () => {
+interface Props {
+  products: Product[];
+}
+
+export const OrderList = ({ products }: Props) => {
   return (
     <div className={styles.wrap}>
       <div className={styles.title}>Ваш заказ</div>

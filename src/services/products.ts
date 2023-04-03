@@ -1,4 +1,4 @@
-export interface Products {
+ export interface Products {
   all: Product[];
   popular: Product[];
   loading: boolean;
@@ -18,5 +18,5 @@ export interface Product {
   brand: string;
   description: string;
   price: number;
-  isPopular: boolean;
 }
+

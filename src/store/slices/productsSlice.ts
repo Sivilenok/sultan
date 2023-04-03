@@ -19,7 +19,7 @@ const productsSlice = createSlice({
       state.all = action.payload;
     },
     setPopularProducts(state, action) {
-        state.popular = action.payload.filter((product: Product) => product.isPopular === true);
+        state.popular = action.payload.filter((product: Product) => product.popular === true);
       },      
   },
 });

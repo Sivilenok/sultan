@@ -12,6 +12,7 @@ import {
   ProductDetailsPage,
 } from "../pages";
 import { ROUTE } from "./routes";
+import { setAllProducts } from "../store";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -27,7 +28,7 @@ export const router = createBrowserRouter(
           path={`/${ROUTE.BASKET}/${ROUTE.PRODUCT_CARD}`}
           element={<ProductDetailsPage />}
         />
-        <Route index element={<MainPage products={[]} />} />
+        <Route index element={<MainPage/>} />
         <Route path={ROUTE.BASKET} element={<BasketPage />} />
         <Route
           path={`/${ROUTE.BASKET}/${ROUTE.MAKE_ORDER}`}

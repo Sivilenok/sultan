@@ -10,7 +10,7 @@ export const MakeOrderPage = () => {
         <div className={styles.wrapper}>
           <ContactDetails />
           <Info />
-          <OrderList />
+          <OrderList products={[]} />
         </div>
       </Wrapper>
     </div>

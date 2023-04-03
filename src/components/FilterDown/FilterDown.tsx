@@ -3,8 +3,10 @@ import { deleteBtn, down, up } from "../../assets";
 import styles from "./styles.module.scss";
 import manufacturers from "../../services/products.json";
 import Wrapper from "../Wrapper/Wrapper";
+import { Product } from "../../services/products";
 
 interface IManufacturer {
+  products: Product[];
   manufacturer: string;
   selected: boolean;
 }
@@ -17,11 +19,13 @@ export const FilterDown = () => {
   const [showShowSort, setShowSort] = useState(false);
   const [arrowDirection, setArrowDirection] = useState("down");
   const [manufacturerList, setManufacturerList] = useState<IManufacturer[]>(
-    manufacturers.map((manufacturerItem) => ({
-      manufacturer: manufacturerItem.manufacturer,
+    manufacturers.products.map((product: Product) => ({
+      manufacturer: product.manufacturer,
+      products: [product],
       selected: false,
     }))
   );
+  
 
   const toggleShowSort = () => {
     setShowSort(!showShowSort);
@@ -52,9 +56,9 @@ export const FilterDown = () => {
     .filter((manufacturer) => manufacturer.selected)
     .map((manufacturer) => manufacturer.manufacturer);
 
-  const dropdownManufacturers = manufacturers.filter(
-    (manufacturer) => !selectedManufacturers.includes(manufacturer.manufacturer)
-  );
+    const dropdownManufacturers = manufacturers.products.filter(
+      (manufacturer) => !selectedManufacturers.includes(manufacturer.manufacturer)
+    );    
 
   return (
     <div className={styles.selection}>
@@ -71,10 +75,11 @@ export const FilterDown = () => {
           <option value="" disabled>
             Поиск...
           </option>
-          {dropdownManufacturers.map((manufacturer, index) => (
-            <option key={index} value={manufacturer.manufacturer}>
-              {manufacturer.manufacturer}
-            </option>
+          {dropdownManufacturers.map((manufacturer, index: number) => (
+           <option key={index} value={manufacturer.manufacturer}>
+           {manufacturer.manufacturer}
+           </option>
+         
           ))}
         </select>
 

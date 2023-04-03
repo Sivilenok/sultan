@@ -2,11 +2,11 @@ import { Global } from "@emotion/react";
 import { globalStyles } from "./ui/globalStyles";
 import { RouterProvider } from "react-router-dom";
 import { router } from "./router";
-import { selectAllProducts, setAllProducts, useAppDispatch, useAppSelector } from "./store";
+import { setAllProducts, useAppDispatch } from "./store";
 import { useEffect } from "react";
+import products from "./services/products.json";
 
 export const App = () => {
-  const products = useAppSelector(selectAllProducts);
   const dispatch = useAppDispatch();
   useEffect(() =>{
     dispatch(setAllProducts(products));

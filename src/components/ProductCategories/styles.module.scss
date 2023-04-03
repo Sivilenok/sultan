@@ -44,6 +44,7 @@
   height: 250px;
   border-radius: 20px;
   background: rgba(188, 165, 120, 0.1);
+  cursor: pointer;
   &:hover {
     transform: scale(1.1);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);

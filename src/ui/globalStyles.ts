@@ -1,11 +1,10 @@
-import { css } from '@emotion/react';
-import { Breakpoints } from './breakpoints';
+import { css } from "@emotion/react";
+import { Breakpoints } from "./breakpoints";
 
 export const globalStyles = () => css`
   :root {
-    --font-family:  'Inter';
+    --font-family: "Inter";
     --max-width: ${Breakpoints.xxl};
-
   }
   * {
     padding: 0;
@@ -42,7 +41,7 @@ export const globalStyles = () => css`
   }
   html,
   body {
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 100%;
     line-height: 1;
     font-size: 14px;
@@ -105,5 +104,3 @@ export const globalStyles = () => css`
     font-weight: 400;
   }
 `;
-
-

@@ -1,11 +1,13 @@
+@import "/src/ui/breakpoints.scss";
+
 .wrapperUp {
   padding: 14px 0;
-  border-bottom:  1px dashed rgba(63, 78, 101, 0.5);
+  border-bottom: 1px dashed rgba(63, 78, 101, 0.5);
 }
 
 .wrapperUpWrapper {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .wrapperLeft {
@@ -171,10 +173,19 @@
   position: absolute;
   top: -5px;
   right: 15px;
+  @include mediaMobile {
+    width: 17px;
+    height: 12px;
+    right: 22px;
+  }
 }
 
 .basket {
   display: inline-block;
+  @include mediaMobile {
+    width: 22px;
+    height: 16px;
+  }
 }
 
 .shoppingCart {
@@ -193,4 +204,51 @@
   font-size: 14px;
   line-height: 21x;
   color: #111111;
+}
+
+.burger {
+  width: 32px;
+  height: 32px;
+}
+
+.up {
+  display: flex;
+  gap: 65px;
+  padding: 15px;
+  align-items: center;
+  border-bottom: 1px solid rgba(63, 78, 101, 0.1);
+}
+
+.sultan {
+  width: 97px;
+  height: 41px;
+}
+
+.catalogMob {
+  padding: 13px 45px;
+  background-repeat: no-repeat;
+  background-position: left 25px center;
+  background-image: url("../../assets/burger-menu/catalog.svg ");
+}
+
+.mobile {
+  display: block;
+  border-bottom: 1px solid rgba(63, 78, 101, 0.1);
+}
+
+.down {
+  display: flex;
+  align-items: center;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+  color: #3f4e65;
+}
+
+.searchMob {
+  padding: 13px 45px;
+  background-repeat: no-repeat;
+  background-position: left 25px center;
+  background-image: url("../../assets/burger-menu/searchMob.svg");
 }

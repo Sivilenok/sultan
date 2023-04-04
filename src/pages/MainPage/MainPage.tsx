@@ -8,18 +8,17 @@ import {
 } from "../../components";
 import Wrapper from "../../components/Wrapper/Wrapper";
 import { Product } from "../../services/products";
-import {
-  setPopularProducts,
-  useAppSelector,
-} from "../../store";
+import { setPopularProducts, useAppSelector } from "../../store";
 import styles from "./styles.module.scss";
 
 interface IProps {
-  products: Product[];
+  products: {
+    all: Product[];
+  };
 }
 
 export const MainPage = () => {
-  const { all: products} = useAppSelector(state => state.products);
+  const { all: products } = useAppSelector((state) => state.products);
 
   return (
     <main className={styles.main}>
@@ -32,10 +31,8 @@ export const MainPage = () => {
           &nbsp;
           <span style={{ color: "#111111" }}>товары</span>
         </h1>
-        <ProductList
-          {...{ products: products.slice(0, 8) }}
-          className={styles.list}
-        />
+        <ProductList           products={products}
+ className={styles.list} />
         <ProductCategories />
         <Sale />
         <BestGoods />

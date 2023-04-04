@@ -1,10 +1,33 @@
+@import "/src/ui/breakpoints.scss";
+
 .banner {
+  height: 796px;
+  width: 100%;
+
   position: relative;
   box-sizing: border-box;
-  height: 796px;
   margin-bottom: 50px;
   background: url("../../assets/img/banner.png") no-repeat;
   background-size: cover;
+  @include mediaMobile {
+    width: 320px;
+    height: 210px;
+  }
+}
+
+.wrapBan {
+  @include mediaMobile {
+    position: absolute;
+    left: 15px;
+    width: 290px;
+    height: 99px;
+    background: linear-gradient(
+      89.86deg,
+      #8a94ab 0.13%,
+      rgba(138, 148, 171, 0) 99.89%
+    );
+    backdrop-filter: blur(4.5px);
+  }
 }
 
 .banner-shifted {
@@ -12,8 +35,11 @@
 }
 
 .wrapBanner {
-  position: absolute;
+  position: relative;
   top: 98px;
+  @include mediaMobile {
+    top: 56px;
+  }
 }
 
 .title {
@@ -24,10 +50,18 @@
   line-height: 77px;
   color: #ffffff;
   padding-bottom: 40px;
+  @include mediaMobile {
+    padding: 15px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 20px;
+    text-align: center;
+    padding-bottom: 10px;
+  }
 }
 
 .subTitle {
-  font-family: "Inter";
+  position: relative;
   font-style: normal;
   font-weight: 800;
   font-size: 30px;
@@ -35,6 +69,13 @@
   text-transform: uppercase;
   color: #ffffff;
   padding-bottom: 60px;
+  @include mediaMobile {
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 150px;
+    top: -70px;
+    text-align: center;
+  }
 }
 
 .btn {

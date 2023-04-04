@@ -1,0 +1,12 @@
+@import "/src/ui/breakpoints.scss";
+
+.wrapper {
+  max-width: 1366px;
+  margin: 0 auto;
+  @include mediaTablet {
+    padding: 0;
+  }
+  @include mediaMobile {
+    padding: 0;
+  }
+}

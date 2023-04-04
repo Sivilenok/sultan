@@ -1,0 +1,23 @@
+$max-width: 85.375rem;
+
+$breakpoints: (
+  "xs": 320px,
+  "sm": 576px,
+  "md": 768px,
+  "lg": 950px,
+  "xl": 1200px,
+  "xxl": 1366px,
+);
+
+@mixin mediaTablet {
+  @media screen and (max-width: 1023px) {
+   @content;
+  }
+ }
+ 
+ @mixin mediaMobile {
+  @media screen and (max-width: 768px) {
+   @content;
+  }
+ }
+

@@ -54,6 +54,10 @@ import payment from "./icons/order-page/payment.svg";
 import question from "./icons/order-page/question.svg";
 import pencil from "./icons/order-page/pencil.svg";
 import modal from "./img/modal.png";
+import burger from "./burger-menu/burger.png";
+import cancel from "./burger-menu/cancel.png";
+import catalog from "./burger-menu/catalog.svg";
+import searchMob from "./burger-menu/searchMob.svg";
 
 export {
   locationIcon,
@@ -111,5 +115,9 @@ export {
   payment,
   question,
   pencil,
-  modal
+  modal,
+  burger,
+  cancel,
+  catalog,
+  searchMob
 };

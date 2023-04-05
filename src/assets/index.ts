@@ -58,6 +58,8 @@ import burger from "./burger-menu/burger.png";
 import cancel from "./burger-menu/cancel.png";
 import catalog from "./burger-menu/catalog.svg";
 import searchMob from "./burger-menu/searchMob.svg";
+import mapMob from "./img/mapMob.png";
+
 
 export {
   locationIcon,
@@ -119,5 +121,6 @@ export {
   burger,
   cancel,
   catalog,
-  searchMob
+  searchMob,
+  mapMob
 };

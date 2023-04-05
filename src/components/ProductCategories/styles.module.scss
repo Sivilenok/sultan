@@ -1,3 +1,5 @@
+@import "/src/ui/breakpoints.scss";
+
 .productCategories {
   padding: 100px 0;
 }
@@ -9,6 +11,13 @@
   line-height: 48px;
   text-transform: uppercase;
   padding-bottom: 15px;
+  @include mediaMobile {
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 24px;
+    padding: 10px 15px;
+
+  }
 }
 
 .subtitle {
@@ -18,6 +27,13 @@
   line-height: 24px;
   color: #3f4e65;
   padding-bottom: 30px;
+  @include mediaMobile {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+    padding-right: 130px;
+    padding-left: 15px;
+  }
 }
 
 .categories {
@@ -25,20 +41,46 @@
   gap: 30px;
   padding: 20px 0;
   position: relative;
+  @include mediaMobile {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 15px;
+  }
 }
 
 .item {
   text-align: center;
   padding: 20px 0;
+
+  @include mediaMobile {
+    padding: 0;
+  }
+}
+.text {
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 21px;
   color: #111111;
-
+  padding: 20px 0;
+  @include mediaMobile {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    padding:10px 30px 0;
+  }
+}
+.lastItem {
+  text-align: center;
+  padding: 20px 0;
+  @include mediaMobile {
+    grid-column: span 2;
+  }
 }
 
-.picture {
+.lastPicture {
+  grid-column: 1 / span 1;
   position: relative;
   width: 250px;
   height: 250px;
@@ -49,6 +91,42 @@
     transform: scale(1.1);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   }
+  @include mediaMobile {
+    width: 290px;
+    height: 140px;
+    background: rgba(188, 165, 120, 0.1);
+    border-radius: 20px;
+  }
+}
+
+.lastPic {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-radius: 20px;
+  @include mediaMobile {
+    position: relative;
+    right: 0;
+  }
+}
+
+.picture {
+  grid-column: 1 / span 1;
+  position: relative;
+  width: 250px;
+  height: 250px;
+  border-radius: 20px;
+  background: rgba(188, 165, 120, 0.1);
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  }
+  @include mediaMobile {
+    width: 140px;
+    height: 140px;
+  }
 }
 
 .pic {
@@ -56,4 +134,8 @@
   left: 0;
   bottom: 0;
   border-radius: 20px;
+  @include mediaMobile {
+    width: 130px;
+    height: 130px;
+  }
 }

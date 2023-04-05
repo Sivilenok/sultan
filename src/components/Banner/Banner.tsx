@@ -3,14 +3,23 @@ import { plus } from "../../assets";
 import { ROUTE } from "../../router";
 import styles from "./styles.module.scss";
 import Wrapper from "../Wrapper/Wrapper";
-import { useWindowSise } from "../../hooks/useWindowSize";
+import { useEffect, useState } from "react";
 
 interface BannerProps {
   isBreadcrumbHidden: boolean;
 }
 
 export const Banner: React.FC<BannerProps> = ({ isBreadcrumbHidden }) => {
-  const { width } = useWindowSise();
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <section
@@ -19,7 +28,7 @@ export const Banner: React.FC<BannerProps> = ({ isBreadcrumbHidden }) => {
       }`}
     >
       <Wrapper>
-        {width && width <= 768 ? (
+        {isMobile ? (
           <div className={styles.wrapBanner}>
             <Wrapper>
               <div className={styles.wrapBan}>
@@ -31,18 +40,22 @@ export const Banner: React.FC<BannerProps> = ({ isBreadcrumbHidden }) => {
                 </h3>
               </div>
               <div className={styles.wrapperBtn}>
-                <button className={styles.btnMini}>
-                  <img src={plus} alt="plus" className={styles.plus} />
-                </button>
-                <p>
-                  Только самые <br /> выгодные предложения
-                </p>
-                <button className={styles.btnMini}>
-                  <img src={plus} alt="plus" className={styles.plus} />
-                </button>
-                <p>
-                  Бесплатная доставка <br /> по Кокчетаву от 10 тыс ₸
-                </p>
+                <div className={styles.wrapperMini}>
+                  <button className={styles.btnMini}>
+                    <img src={plus} alt="plus" className={styles.plus} />
+                  </button>
+                  <p>
+                    Только самые выгодные предложения
+                  </p>
+                </div>
+                <div className={styles.wrapperMini}>
+                  <button className={styles.btnMini}>
+                    <img src={plus} alt="plus" className={styles.plus} />
+                  </button>
+                  <p>
+                    Бесплатная доставка по <strong>Кокчетаву от 10 тыс ₸</strong>
+                  </p>
+                </div>
               </div>
             </Wrapper>
           </div>

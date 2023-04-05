@@ -1,7 +1,15 @@
+@import "/src/ui/breakpoints.scss";
+
 .sale {
   height: 500px;
   background: linear-gradient(0deg, #b7bfca 0%, #bdc7d0 65.9%, #bdc7d1 100%);
   border-radius: 10px;
+  @include mediaMobile {
+    margin: 0 15px;
+    width: 306px;
+    height: 205px;
+    background: none;
+  }
 }
 
 .wrapper {
@@ -14,6 +22,12 @@
   position: absolute;
   top: 0;
   right: 0;
+  @include mediaMobile {
+    width: 290px;
+    height: 205px;
+    border-radius: 10px;
+    right: 16px;
+  }
 }
 
 .wrapperLeft {
@@ -21,6 +35,12 @@
   top: 60px;
   left: 110px;
   z-index: 1;
+  @include mediaMobile {
+    margin: 35px 25px;
+    top: -20px;
+    left: 0;
+    width: 200px;
+  }
 }
 
 .rightIcon {
@@ -29,14 +49,27 @@
   top: 50%;
   transform: translate(40%, 250%);
   cursor: pointer;
+  @include mediaMobile {
+    width: 39px;
+    height: 39px;
+    z-index: 1;
+    transform: translate(0, 210%);
+  }
 }
 
 .leftIcon {
   position: absolute;
-  left: 0;
+  left: -35px;
   top: 50%;
-  transform: translate(-40%, 250%);
+  transform: translate(0, 250%);
   cursor: pointer;
+  z-index: 1;
+  @include mediaMobile {
+    width: 39px;
+    height: 39px;
+    transform: translate(-40%, 210%);
+    left: 0;
+  }
 }
 
 .subtitle {
@@ -48,6 +81,14 @@
   text-transform: uppercase;
   color: #ffffff;
   padding: 10px 0;
+  @include mediaMobile {
+    width: 83px;
+    font-weight: 500;
+    font-size: 6px;
+    line-height: 11px;
+    letter-spacing: 0.2em;
+    padding: 5px 0;
+  }
 }
 
 .title {
@@ -57,6 +98,11 @@
   line-height: 77px;
   color: #ffffff;
   padding: 25px 0;
+  @include mediaMobile {
+    font-size: 20px;
+    line-height: 22px;
+    padding: 5px 0;
+  }
 }
 
 .descr {
@@ -66,6 +112,17 @@
   line-height: 30px;
   color: #ffffff;
   padding: 15px 0;
+  @include mediaMobile {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    padding: 10px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    max-height: calc(3 * 17px);
+  }
 }
 
 .btn {
@@ -83,6 +140,14 @@
 
   &:hover {
     box-shadow: 0 0 10px #ffc85e;
+  }
+  @include mediaMobile {
+    margin: 15px 0;
+    width: 161px;
+    height: 43px;
+    font-weight: 700;
+    font-size: 10px;
+    line-height: 12px;
   }
 }
 
@@ -103,5 +168,8 @@
   &:active {
     width: 26px;
     background: #ffffff;
+  }
+  @include mediaMobile {
+    display: none;
   }
 }

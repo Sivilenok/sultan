@@ -1,4 +1,4 @@
-import { blurMap, failIcon, locationIcon, map } from "../../assets";
+import { blurMap, failIcon, locationIcon, map, mapMob } from "../../assets";
 import Wrapper from "../Wrapper/Wrapper";
 import styles from "./styles.module.scss";
 
@@ -6,7 +6,8 @@ export const Contacts = () => {
   return (
     <div className={styles.contacts}>
       <Wrapper>
-        <img src={map} alt="map" />
+        <img src={map} alt="map"  className={styles.pic}/>
+        <img src={mapMob} alt="mapMob"  className={styles.picMob}/>
         <img src={blurMap} alt="blurMap" className={styles.picture} />
         <div className={styles.wrapper}>
           <h2 className={styles.title}>Контакты</h2>
@@ -18,7 +19,7 @@ export const Contacts = () => {
                 <img
                   src={locationIcon}
                   alt="location"
-                  style={{ padding: "5px 13px 0 0" }}
+                  className={styles.location}
                 />
                 <p className={styles.descr}>
                   г. Кокчетав, ул. Ж. Ташенова 129Б <br /> (Рынок Восточный)
@@ -39,8 +40,8 @@ export const Contacts = () => {
                 <img
                   src={failIcon}
                   alt="fail"
-                  style={{ padding: "5px 13px 0 0" }}
-                />
+                  className={styles.failIcon}>
+                </img>
                 <p className={styles.descr}>
                   ИП Катран Д.С. <br /> ИИН: 860113450858
                 </p>

@@ -15,48 +15,56 @@ import { ROUTE, routes } from "./../../router/routes";
 import Wrapper from "../Wrapper/Wrapper";
 
 import styles from "./styles.module.scss";
-import { useWindowSise } from "../../hooks/useWindowSize";
 
 export const Header = () => {
   const [value, setValue] = useState("");
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   const handleChange: React.ChangeEventHandler<HTMLSelectElement> = (event) => {
     setValue(event.target.value);
   };
-  const { width } = useWindowSise();
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <>
-      {width && width <= 768 ? (
-          <div className={styles.mobile}>
-            <div className={styles.up}>
-              <img src={burger} alt="burger" className={styles.burger} />
-              <img
-                src={sultan}
-                alt="sultan"
-                width={"156px"}
-                height={"66px"}
-                className={styles.sultan}
-              />
-              <div className={styles.shopping}>
-                <Link to={ROUTE.BASKET} className={styles.baskLink}>
-                  <img src={basket} alt="basket" className={styles.basket} />
-                </Link>
-                <img
-                  src={basketCount}
-                  alt="basketCount"
-                  className={styles.basketCount}
-                />
-              </div>
-            </div>
-            <div className={styles.down}>
-              <Link className={styles.linksHeader} to={ROUTE.CATALOG}>
-                <div className={styles.catalogMob}>Каталог</div>
+      {isMobile ? (
+        <div className={styles.mobile}>
+          <div className={styles.up}>
+            <img src={burger} alt="burger" className={styles.burger} />
+            <img
+              src={sultan}
+              alt="sultan"
+              width={"156px"}
+              height={"66px"}
+              className={styles.sultan}
+            />
+            <div className={styles.shopping}>
+              <Link to={ROUTE.BASKET} className={styles.baskLink}>
+                <img src={basket} alt="basket" className={styles.basket} />
               </Link>
-              <div className={styles.separator}></div>
-              <div className={styles.searchMob}>Поиск</div>
+              <img
+                src={basketCount}
+                alt="basketCount"
+                className={styles.basketCount}
+              />
             </div>
           </div>
+          <div className={styles.down}>
+            <Link className={styles.linksHeader} to={ROUTE.CATALOG}>
+              <div className={styles.catalogMob}>Каталог</div>
+            </Link>
+            <div className={styles.separator}></div>
+            <div className={styles.searchMob}>Поиск</div>
+          </div>
+        </div>
       ) : (
         <>
           <div className={styles.wrapperUp}>

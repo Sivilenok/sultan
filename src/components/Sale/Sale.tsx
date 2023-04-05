@@ -39,7 +39,7 @@ export const Sale = () => {
           />
           <div className={styles.wrapperLeft}>
             <p className={styles.subtitle}>*Акция действует до 04/09/22</p>
-            <h1 className={styles.title}>Название Акции</h1>
+            <h1 className={styles.title}><strong>Название</strong> Акции</h1>
             <div className={styles.descr}>
               Условия акции в пару строк, Условия акции <br />в пару строк,
               Условия акции в пару строк

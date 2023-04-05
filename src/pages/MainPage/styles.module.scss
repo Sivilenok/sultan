@@ -1,3 +1,5 @@
+@import "/src/ui/breakpoints.scss";
+
 .title {
     font-family: 'Inter';
     font-style: normal;
@@ -6,6 +8,12 @@
     line-height: 48px;
     text-transform: uppercase;
     padding: 50px 0;
+    @include mediaMobile{
+        font-weight: 800;
+        font-size: 20px;
+        line-height: 120px;
+        padding: 15px;
+    }
 }
 
 .list {

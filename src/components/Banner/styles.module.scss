@@ -75,6 +75,7 @@
     line-height: 150px;
     top: -70px;
     text-align: center;
+    padding: 0;
   }
 }
 
@@ -99,6 +100,12 @@
   display: flex;
   padding-top: 90px;
   align-items: center;
+  @include mediaMobile {
+    position: absolute;
+    display: block;
+    top: 170px;
+    padding: 0 15px;
+  }
 }
 
 .btnMini {
@@ -110,6 +117,11 @@
   &:hover {
     box-shadow: 0 0 10px #ffc85e;
   }
+  @include mediaMobile{
+    width: 18px;
+    height: 18px;
+    padding: 6px;
+  }
 }
 
 p {
@@ -120,4 +132,24 @@ p {
   line-height: 21px;
   color: #ffffff;
   padding-right: 35px;
+  @include mediaMobile {
+    font-size: 10px;
+    line-height: 15px;
+    color: #3f4e65;
+    padding: 0;
+  }
+}
+
+.wrapperMini {
+  display: flex;
+  padding-bottom: 13px;
+  align-items: center;
+}
+
+.plus {
+  @include mediaMobile {
+    width: 5px;
+
+    height: 5px;
+  }
 }

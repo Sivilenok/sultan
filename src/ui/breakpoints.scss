@@ -10,13 +10,13 @@ $breakpoints: (
 );
 
 @mixin mediaTablet {
-  @media screen and (max-width: 1023px) {
+  @media (max-width: 1023px) {
    @content;
   }
  }
  
  @mixin mediaMobile {
-  @media screen and (max-width: 768px) {
+  @media (max-width: 768px) {
    @content;
   }
  }

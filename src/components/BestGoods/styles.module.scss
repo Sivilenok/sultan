@@ -1,5 +1,10 @@
+@import "/src/ui/breakpoints.scss";
+
 .bestGoods {
   padding: 100px 0;
+  @include mediaMobile {
+    padding: 50px 0;
+  }
 }
 
 .title {
@@ -8,6 +13,12 @@
   font-size: 40px;
   line-height: 48px;
   text-transform: uppercase;
+  @include mediaMobile {
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 24px;
+    padding: 0 15px;
+  }
 }
 
 .subtitle {
@@ -17,6 +28,12 @@
   font-size: 20px;
   line-height: 24px;
   color: #3f4e65;
+  @include mediaMobile {
+    padding-left: 15px;
+    font-size: 14px;
+    line-height: 17px;
+
+  }
 }
 
 .wrapper {
@@ -25,10 +42,13 @@
   padding: 50px 0;
   overflow-x: scroll;
   scroll-behavior: smooth;
+  @include mediaMobile {
+    padding: 25px 0;
+  }
 }
 
 .imagesContainer {
-    display: flex;
+  display: flex;
 }
 
 .picture {
@@ -46,6 +66,9 @@
 .dotsContainer {
   display: flex;
   gap: 6px;
+  @include mediaMobile {
+    padding-top: 25px;
+  }
 }
 
 .dot {
@@ -60,4 +83,5 @@
     width: 26px;
     background: #ffc85e;
   }
+ 
 }

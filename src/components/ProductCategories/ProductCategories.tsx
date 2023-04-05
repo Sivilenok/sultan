@@ -31,7 +31,7 @@ export const ProductCategories = () => {
                 className={styles.pic}
               />
             </div>
-            <div className={styles.item}>Бытовая химия</div>
+            <div className={styles.text}>Бытовая химия</div>
           </div>
           <div className={styles.item}>
             <div className={styles.picture}>
@@ -41,7 +41,7 @@ export const ProductCategories = () => {
                 className={styles.pic}
               />
             </div>
-            <div className={styles.item}>Косметика и гигиена</div>
+            <div className={styles.text}>Косметика и гигиена</div>
           </div>
           <div className={styles.item}>
             <div className={styles.picture}>
@@ -51,7 +51,7 @@ export const ProductCategories = () => {
                 className={styles.pic}
               />
             </div>
-            <div className={styles.item}>Товары для дома</div>
+            <div className={styles.text}>Товары для дома</div>
           </div>
           <div className={styles.item}>
             <div className={styles.picture}>
@@ -61,11 +61,11 @@ export const ProductCategories = () => {
                 className={styles.pic}
               />
             </div>
-            <div className={styles.item}>Товары для детей и мам</div>
+            <div className={styles.text}>Товары для детей и мам</div>
           </div>
-          <div className={styles.item}>
-            <div className={styles.picture}>
-              <img src={tableware} alt="tableware" className={styles.pic} />
+          <div className={`${styles.item} ${styles.lastItem}`}>
+            <div className={styles.lastPicture}>
+              <img src={tableware} alt="tableware" className={styles.lastPic} />
             </div>
             <div className={styles.item}>Посуда</div>
           </div>

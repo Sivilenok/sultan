@@ -59,6 +59,8 @@ import cancel from "./burger-menu/cancel.png";
 import catalog from "./burger-menu/catalog.svg";
 import searchMob from "./burger-menu/searchMob.svg";
 import mapMob from "./img/mapMob.png";
+import phone from "./icons/phone.svg";
+import telephone from "./icons/telephone.svg";
 
 
 export {
@@ -122,5 +124,7 @@ export {
   cancel,
   catalog,
   searchMob,
-  mapMob
+  mapMob,
+  phone,
+  telephone
 };

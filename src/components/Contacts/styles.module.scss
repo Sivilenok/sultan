@@ -33,6 +33,7 @@
 .picMob{
   display: none;
   @include mediaMobile {
+    display: block;
     width: 290px;
     height: 600px;
   }

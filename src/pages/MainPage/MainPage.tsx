@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   Banner,
   BestGoods,
@@ -8,7 +9,7 @@ import {
 } from "../../components";
 import Wrapper from "../../components/Wrapper/Wrapper";
 import { Product } from "../../services/products";
-import { setPopularProducts, useAppSelector } from "../../store";
+import { useAppSelector } from "../../store";
 import styles from "./styles.module.scss";
 
 interface IProps {
@@ -19,7 +20,7 @@ interface IProps {
 
 export const MainPage = () => {
   const { all: products } = useAppSelector((state) => state.products);
-
+  
   return (
     <main className={styles.main}>
       <Banner isBreadcrumbHidden={true} />

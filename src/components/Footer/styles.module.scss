@@ -1,8 +1,21 @@
+@import "/src/ui/breakpoints.scss";
+
 .footer {
   margin-top: 100px;
   padding: 70px 0;
   background: #3f4e65;
   height: 500px;
+  @include mediaMobile {
+    margin-top: 50px;
+    padding: 15px;
+    height: 100%;
+  }
+}
+.number {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  color: #ffffff;
 }
 
 .text {
@@ -12,6 +25,12 @@
   line-height: 24px;
   color: #ffffff;
   padding-top: 20px;
+  @include mediaMobile {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    padding-top: 0;
+  }
 }
 
 .subtext {
@@ -21,6 +40,9 @@
   font-size: 12px;
   line-height: 18px;
   color: #ffffff;
+  @include mediaMobile {
+    padding-top: 15px;
+  }
 }
 
 .input {
@@ -30,7 +52,7 @@
   margin: 14px 0;
   background: #ffffff;
   border-radius: 36px;
-  color: #5c6370;
+  color: rgba(63, 78, 101, 0.6);
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -41,17 +63,28 @@
   &:hover {
     box-shadow: 0 0 10px #ffc85e;
   }
+  @include mediaMobile {
+    width: 290px;
+  }
 }
 
 .wrapper {
   display: flex;
   justify-content: space-between;
+  @include mediaMobile {
+    gap: 44px;
+    align-items: center;
+  }
 }
 
 .itemWrap {
   display: flex;
   gap: 120px;
   padding: 0 35px;
+  @include mediaMobile {
+    padding: 30px 0;
+    gap: 24px;
+  }
 }
 
 .title {
@@ -61,6 +94,11 @@
   line-height: 21px;
   color: #ffffff;
   padding-bottom: 5px;
+  @include mediaMobile {
+    line-height: 30px;
+    white-space: nowrap;
+    padding-bottom: 0;
+  }
 }
 
 .wrapperLink {
@@ -69,6 +107,9 @@
 
 .linksFooter {
   padding-top: 20px;
+  @include mediaMobile {
+    padding-top: 10px;
+  }
 }
 
 .links {
@@ -79,6 +120,11 @@
   color: #ffffff;
   &:hover {
     box-shadow: 0 0 10px #ffc85e;
+  }
+  @include mediaMobile {
+    white-space: nowrap;
+    font-size: 12px;
+    line-height: 18px;
   }
 }
 
@@ -95,6 +141,13 @@
   margin: 20px 0;
   &:hover {
     box-shadow: 0 0 10px #ffc85e;
+  }
+  @include mediaMobile {
+    width: 149px;
+    height: 40px;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
   }
 }
 
@@ -121,12 +174,50 @@
   font-size: 12px;
   line-height: 18px;
   color: #ffffff;
+  @include mediaMobile {
+    padding-bottom: 25px;
+  }
+}
+
+.hours {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 15px;
+  text-decoration-line: underline;
+  color: #ffffff;
 }
 
 .payments {
   display: flex;
   gap: 5px;
   padding: 20px 0;
+  @include mediaMobile {
+    padding: 10px 0;
+  }
 }
 
+.sultanFooter {
+  width: 156px;
+  height: 66px;
+  padding-bottom: 15px;
+  @include mediaMobile {
+    width: 97px;
+    height: 41px;
+    padding: 0;
+  }
+}
 
+.textWrap {
+  display: flex;
+  gap: 27px;
+  padding-top: 25px;
+  white-space: nowrap;
+}
+
+.message {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  color: #ffffff;
+}

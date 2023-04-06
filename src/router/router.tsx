@@ -1,6 +1,7 @@
 import {
   createBrowserRouter,
   createRoutesFromElements,
+  Navigate,
   Route,
 } from "react-router-dom";
 import { Layout } from "../components";
@@ -12,7 +13,6 @@ import {
   ProductDetailsPage,
 } from "../pages";
 import { ROUTE } from "./routes";
-import { setAllProducts } from "../store";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -37,6 +37,12 @@ export const router = createBrowserRouter(
         <Route
           path={`/${ROUTE.BASKET}/${ROUTE.MAKE_ORDER}/${ROUTE.PRODUCT_CARD}`} 
           element={<ProductDetailsPage />}
+        />
+        <Route
+          path={`${ROUTE.PRODUCT_CARD}/:productId`}
+          element={
+            <Navigate to={ROUTE.HOME} />
+          }
         />
       </Route>
     </>

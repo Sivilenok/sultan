@@ -3,7 +3,6 @@
 .banner {
   height: 796px;
   width: 100%;
-
   position: relative;
   box-sizing: border-box;
   margin-bottom: 50px;
@@ -32,6 +31,9 @@
 
 .banner-shifted {
   margin-top: -90px;
+  @include mediaMobile {
+    margin-top: -55px;
+  }
 }
 
 .wrapBanner {

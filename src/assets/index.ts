@@ -61,7 +61,7 @@ import searchMob from "./burger-menu/searchMob.svg";
 import mapMob from "./img/mapMob.png";
 import phone from "./icons/phone.svg";
 import telephone from "./icons/telephone.svg";
-
+import back from "./img/back.png";
 
 export {
   locationIcon,
@@ -126,5 +126,6 @@ export {
   searchMob,
   mapMob,
   phone,
-  telephone
+  telephone,
+  back
 };

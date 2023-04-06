@@ -4,6 +4,7 @@ import {
   basket,
   basketCount,
   burger,
+  cancel,
   catalogBtn,
   download,
   emailIcon,
@@ -46,7 +47,7 @@ export const Header = () => {
           <div className={styles.mobile}>
             <div className={styles.up}>
               <img
-                src={burger}
+                src={isMenuOpen ? cancel : burger}
                 alt="burger"
                 className={styles.burger}
                 onClick={handleMenuToggle}

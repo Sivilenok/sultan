@@ -1,9 +1,18 @@
+@import "/src/ui/breakpoints.scss";
+
 .productCard {
   display: flex;
+  @include mediaMobile {
+    display: block;
+    padding: 20px 15px 0;
+  }
 }
 
 .productDetails {
   padding: 40px;
+  @include mediaMobile {
+    padding: 10px 0 0;
+  }
 }
 
 .inStock {
@@ -22,6 +31,9 @@
   font-size: 12px;
   line-height: 16px;
   background: url("../../assets/icons/battle.svg ") no-repeat;
+  @include mediaMobile {
+    display: none;
+  }
 }
 
 .title {
@@ -31,11 +43,21 @@
   line-height: 45px;
   color: #111111;
   padding: 10px 0;
+  @include mediaMobile {
+    font-weight: 400;
+
+    font-size: 16px;
+
+    line-height: 24px;
+  }
 }
 
 .wrapperUp {
-  display: flex;
+  display: block;
   padding: 15px 0;
+  @include mediaMobile {
+    padding: 0;
+  }
 }
 
 .price {
@@ -44,12 +66,19 @@
   font-size: 30px;
   line-height: 39px;
   color: #111111;
+  @include mediaMobile {
+    font-size: 20px;
+    line-height: 26px;
+  }
 }
 
 .count {
   padding: 0 40px;
   display: flex;
   align-items: center;
+  @include mediaMobile {
+    padding: 0;
+  }
 }
 
 .counter {
@@ -87,6 +116,11 @@
     transform: scale(1.1);
     box-shadow: 0 0 20px #ffc85e;
   }
+  @include mediaMobile {
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0;
+  }
 }
 
 .share {
@@ -95,12 +129,18 @@
   background: #ffffff;
   box-shadow: 0px 15px 70px -11px rgba(43, 28, 1, 0.04);
   border-radius: 10px;
+  @include mediaMobile {
+    display: none;
+  }
 }
 
 .wrapperDown {
   display: flex;
   gap: 10px;
   padding: 20px 0;
+  @include mediaMobile {
+    display: block;
+  }
 }
 
 .info {
@@ -116,6 +156,10 @@
   font-size: 12px;
   line-height: 18px;
   color: #3f4e65;
+  @include mediaMobile {
+    width: 290px;
+
+  }
 }
 
 .priceList {
@@ -129,12 +173,19 @@
   font-weight: 700;
   font-size: 14px;
   line-height: 17px;
+  @include mediaMobile {
+    width: 290px;
+    margin-top: 10px;
+  }
 }
 
 .desc {
   padding: 15px 0;
   display: flex;
   flex-direction: column;
+  @include mediaMobile {
+padding: 0;
+}
 }
 
 .item {
@@ -151,11 +202,15 @@
   padding: 20px 0;
   background: none;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 16px;
   line-height: 24px;
   color: #111111;
   cursor: pointer;
+  @include mediaMobile {
+    font-size: 14px;
+line-height: 21px;
+  }
 }
 
 .specText {
@@ -198,4 +253,40 @@
 .picture {
   width: 664px;
   height: 471px;
+  @include mediaMobile {
+    width: 256px;
+    height: 179px;
+    margin: 25px 15px 5px;
+  }
+}
+
+.detail {
+  display: none;
+  @include mediaMobile {
+    display: flex;
+    gap: 27px;
+    padding: 20px 0;
+  }
+}
+
+.wrapperMob {
+  display: none;
+  @include mediaMobile {
+    display: flex;
+    gap: 31px;
+  }
+}
+
+.shareMob {
+  width: 59px;
+  height: 59px;
+  background: #ffffff;
+  box-shadow: 0px 15px 70px -11px rgba(43, 28, 1, 0.04);
+  border-radius: 10px;
+}
+ .list {
+display: flex;
+@include mediaMobile {
+ display: none;
+ }
 }

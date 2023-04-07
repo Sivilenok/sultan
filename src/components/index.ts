@@ -20,6 +20,7 @@ export * from './OrderItem/OrderItem';
 export * from './OrderList/OrderList';
 export * from './Modal/Modal';
 export * from './Wrapper/Wrapper';
+export * from './Sort/Sort';
 
 
 

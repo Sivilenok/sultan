@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { deleteBtn, down, up } from "../../assets";
+import { deleteBtn, down, downArrow, up, upArrow } from "../../assets";
 import styles from "./styles.module.scss";
 import manufacturers from "../../services/products.json";
 import Wrapper from "../Wrapper/Wrapper";
 import { Product } from "../../services/products";
+import { FilterDepartures } from "../FilterDepartures/FilterDepartures";
 
 interface IManufacturer {
   products: Product[];
@@ -11,8 +12,13 @@ interface IManufacturer {
   selected: boolean;
 }
 
-export const FilterDown = () => {
+interface Props {
+  onClick: () => void;
+}
+
+export const FilterDown = ({onClick}: Props) => {
   const [value, setValue] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
   const handleChange: React.ChangeEventHandler<HTMLSelectElement> = (event) => {
     setValue(event.target.value);
   };
@@ -25,7 +31,6 @@ export const FilterDown = () => {
       selected: false,
     }))
   );
-  
 
   const toggleShowSort = () => {
     setShowSort(!showShowSort);
@@ -56,13 +61,27 @@ export const FilterDown = () => {
     .filter((manufacturer) => manufacturer.selected)
     .map((manufacturer) => manufacturer.manufacturer);
 
-    const dropdownManufacturers = manufacturers.products.filter(
-      (manufacturer) => !selectedManufacturers.includes(manufacturer.manufacturer)
-    );    
+  const dropdownManufacturers = manufacturers.products.filter(
+    (manufacturer) => !selectedManufacturers.includes(manufacturer.manufacturer)
+  );
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
     <div className={styles.selection}>
       <Wrapper>
+        <div className={styles.wrapMob}>
+          <div className={styles.titleMob}>ПОДБОР ПО ПАРАМЕТРАМ</div>
+          <button className={styles.btnMob} onClick={toggleDropdown}>
+            {isOpen && <FilterDepartures />}
+            <img
+              src={isOpen ? downArrow : upArrow }
+              alt="upArrow"
+              className={styles.upArrow}
+            />
+          </button>
+        </div>
         <div className={styles.title}>ПОДБОР ПО ПАРАМЕТРАМ</div>
         <div className={styles.subtitle}>Цена ₸</div>
         <div className={styles.count}>
@@ -70,16 +89,15 @@ export const FilterDown = () => {
           <div className={styles.quantity}>-</div>
           <button className={styles.counter}>10 000</button>
         </div>
-        <div className={styles.title}>Производитель</div>
+        <div className={styles.titleTwo}>Производитель</div>
         <select className={styles.search} value={value} onChange={handleChange}>
           <option value="" disabled>
             Поиск...
           </option>
           {dropdownManufacturers.map((manufacturer, index: number) => (
-           <option key={index} value={manufacturer.manufacturer}>
-           {manufacturer.manufacturer}
-           </option>
-         
+            <option key={index} value={manufacturer.manufacturer}>
+              {manufacturer.manufacturer}
+            </option>
           ))}
         </select>
 

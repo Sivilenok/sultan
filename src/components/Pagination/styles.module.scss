@@ -1,8 +1,13 @@
+@import "/src/ui/breakpoints.scss";
+
 .pagination {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 20px;
+  @include mediaMobile {
+    margin-top: 25px;
+  }
 }
 
 .currentPage {

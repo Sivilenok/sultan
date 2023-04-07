@@ -69,16 +69,16 @@ export const Header = () => {
                   className={styles.basketCount}
                 />
               </div>
-            </div>
-            <div className={styles.down}>
+             </div>
+             <div className={styles.down}>
               <Link className={styles.linksHeader} to={ROUTE.CATALOG}>
                 <div className={styles.catalogMob}>Каталог</div>
               </Link>
               <div className={styles.separator}></div>
               <div className={styles.searchMob}>Поиск</div>
-            </div>
+             </div>
 
-            {isMenuOpen && (
+             {isMenuOpen && (
               <div className={styles.menu}>
                 <Wrapper className={styles.wrapperUpWrapper}>
                   <div className={styles.wrapperMenu}>

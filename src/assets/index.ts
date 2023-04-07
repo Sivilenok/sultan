@@ -62,6 +62,8 @@ import mapMob from "./img/mapMob.png";
 import phone from "./icons/phone.svg";
 import telephone from "./icons/telephone.svg";
 import back from "./img/back.png";
+import downArrow from "./icons/downArrow.svg";
+import upArrow from "./icons/upArrow.svg";
 
 export {
   locationIcon,
@@ -127,5 +129,7 @@ export {
   mapMob,
   phone,
   telephone,
-  back
+  back,
+  downArrow,
+  upArrow
 };

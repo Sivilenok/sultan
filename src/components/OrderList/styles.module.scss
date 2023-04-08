@@ -1,3 +1,5 @@
+@import "/src/ui/breakpoints.scss";
+
 .title {
   font-style: normal;
   font-weight: 700;
@@ -51,6 +53,11 @@
   &:hover {
     box-shadow: 0 0 10px #ffc85e;
   }
+  @include mediaMobile {
+    margin-top: 30px;
+    width: 290px;
+    height: 80px;
+  }
 }
 
 .wrap {
@@ -61,4 +68,35 @@
   border-radius: 10px;
 }
 
+.price {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  @include mediaMobile {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 39px;
+  }
+}
 
+.listTotal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pencil {
+  width: 59px;
+  height: 59px;
+  background: #ffc85e;
+  border-radius: 79px;
+  padding: 18px;
+}
+
+.mob {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  padding-top: 40px;
+}

@@ -1,3 +1,5 @@
+@import "/src/ui/breakpoints.scss";
+
 .title {
   font-style: normal;
   font-weight: 500;
@@ -12,6 +14,9 @@
   gap: 15px;
   align-items: center;
   padding-bottom: 30px;
+  @include mediaMobile {
+    padding-bottom: 20px;
+  }
 }
 
 .number {
@@ -55,7 +60,10 @@
 }
 
 .item {
-    padding-bottom: 45px;
+  padding-bottom: 45px;
+  @include mediaMobile {
+    padding-bottom: 30px;
+  }
 }
 
 .searchTown {
@@ -71,7 +79,7 @@
   -moz-appearance: none;
   appearance: none;
   cursor: pointer;
-  background-image: url('../../assets/icons/down.svg ');
+  background-image: url("../../assets/icons/down.svg ");
   background-position: right 30px center;
   background-repeat: no-repeat;
   padding-right: 24px;
@@ -81,18 +89,72 @@
 }
 
 .btn {
-    width: 289px;
-    height: 59px;
-    background: #ffc85e;
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 17px;
-    border-radius: 79px;
-    color: #ffffff;
-    &:hover {
-      box-shadow: 0 0 10px #ffc85e;
-    }
+  width: 289px;
+  height: 59px;
+  background: #ffc85e;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  border-radius: 79px;
+  color: #ffffff;
+  &:hover {
+    box-shadow: 0 0 10px #ffc85e;
   }
-  
+}
+
+.wrapper {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  padding-top: 25px;
+  @include mediaMobile {
+    padding: 0;
+  }
+}
+
+.number {
+  width: 35px;
+  height: 35px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 198, 80, 0.3) 0%,
+    rgba(254, 202, 110, 0.3) 97.25%
+  );
+  border-radius: 50px;
+  text-align: center;
+  line-height: 35px;
+}
+
+.title {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #111111;
+}
+
+.text {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #111111;
+  padding-top: 30px;
+  @include mediaMobile {
+    padding-top: 20px;
+  }
+}
+
+.comments {
+  width: 289px;
+  height: 324px;
+  background: #ededed;
+  border-radius: 36px;
+  resize: none;
+  padding: 20px 30px;
+  opacity: 0.6;
+  margin-top: 10px;
+}

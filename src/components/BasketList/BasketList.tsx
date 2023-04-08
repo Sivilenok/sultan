@@ -1,3 +1,4 @@
+import { ariel } from "../../assets";
 import { BasketProduct } from "../BasketProduct/BasketProduct";
 import Wrapper from "../Wrapper/Wrapper";
 import styles from "./styles.module.scss";
@@ -7,12 +8,12 @@ export const BasketList = () => {
     <div className={styles.basketlist}>
       <Wrapper>
         <BasketProduct
-          image_url={""}
-          name={""}
-          size_type={""}
-          size={""}
-          price={0}
-          description={""}
+          image_url={ariel}
+          name={"AOS"}
+          size_type={"мл"}
+          size={"450"}
+          price={48.76}
+          description={"средство для мытья посуды Crystal"}
         />
       </Wrapper>
     </div>

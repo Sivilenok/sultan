@@ -1,3 +1,5 @@
+@import "/src/ui/breakpoints.scss";
+
 .makeOrder {
   padding: 0 14px;
 }
@@ -9,10 +11,19 @@
   line-height: 48px;
   text-transform: uppercase;
   color: #111111;
+  @include mediaMobile {
+    font-size: 20px;
+    line-height: 24px;
+    padding: 25px 0;
+  }
 }
 
 .wrapper {
   display: flex;
   gap: 100px;
   padding-top: 50px;
+  @include mediaMobile {
+    padding-top: 0;
+    display: block;
+  }
 }

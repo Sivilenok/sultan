@@ -1,15 +1,24 @@
+@import "/src/ui/breakpoints.scss";
+
 .basketProduct {
   display: flex;
   align-items: center;
   gap: 20px;
   padding: 50px 0;
   border-bottom: 1px dashed rgba(63, 78, 101, 0.1);
+  @include mediaMobile {
+    display: block;
+    padding: 0;
+  }
 }
 
 .separator {
   border: 1px dashed rgba(63, 78, 101, 0.1);
   height: 49px;
   margin: 0 25px;
+  @include mediaMobile {
+    display: none;
+  }
 }
 
 .picture {
@@ -20,6 +29,11 @@
 .count {
   display: flex;
   align-items: center;
+  @include mediaMobile {
+    border-right: 1px dashed rgba(63, 78, 101, 0.1);
+    padding-right: 15px;
+    height: 49px;
+  }
 }
 
 .counter {
@@ -45,6 +59,10 @@
 .size {
   padding: 0 15px;
   background: url("../../assets/icons/battle.svg ") no-repeat;
+  @include mediaMobile {
+    padding: 10px 15px;
+    background: url("../../assets/icons/battle.svg ") no-repeat 0;
+  }
 }
 
 .name {
@@ -54,10 +72,26 @@
   font-size: 30px;
   line-height: 36px;
   color: #111111;
+  @include mediaMobile {
+    padding: 0 0 10px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
+.text {
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 18px;
+  color: #3f4e65;
 }
 
 .wrapper {
   padding-right: 65px;
+  @include mediaMobile {
+    padding-right: 0;
+  }
 }
 
 .price {
@@ -66,6 +100,14 @@
   font-size: 30px;
   line-height: 39px;
   color: #111111;
+  @include mediaMobile {
+    border-right: 1px dashed rgba(63, 78, 101, 0.1);
+    padding-right: 15px;
+    font-size: 16px;
+    line-height: 21px;
+    height: 49px;
+    padding-top: 15px;
+  }
 }
 
 .deleteBtn {
@@ -73,5 +115,15 @@
   &:hover {
     border-radius: 79px;
     box-shadow: 0 0 10px #ffc85e;
+  }
+}
+
+.wrap {
+  display: flex;
+  @include mediaMobile {
+    padding: 20px 0;
+    display: flex;
+    gap: 15px;
+    align-items: center;
   }
 }

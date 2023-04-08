@@ -1,11 +1,24 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./styles.module.scss";
 
 export const ContactDetails = () => {
   const [value, setValue] = useState("");
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
   const handleChange: React.ChangeEventHandler<HTMLSelectElement> = (event) => {
     setValue(event.target.value);
   };
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <div className={styles.contactDetails}>
       <div className={styles.item}>
@@ -44,7 +57,11 @@ export const ContactDetails = () => {
           <div className={styles.title}>адрес доставки</div>
         </div>
         <div className={styles.name}>Город</div>
-        <select className={styles.searchTown} value={value} onChange={handleChange}>
+        <select
+          className={styles.searchTown}
+          value={value}
+          onChange={handleChange}
+        >
           <option value="" disabled>
             Выберите ваш город
           </option>
@@ -56,7 +73,22 @@ export const ContactDetails = () => {
           </option>
         </select>
       </div>
-      <button className={styles.btn}>Подтверждение заказа</button>
+      {isMobile && (
+        <>
+          <div className={styles.wrapper}>
+            <div className={styles.number}>3</div>
+            <div className={styles.title}>Дополнительно</div>
+          </div>
+          <div className={styles.text}>Комментарий</div>
+          <textarea
+            id="comment"
+            name="comment"
+            rows={4}
+            className={styles.comments}
+            placeholder="Введите ваш комментарий"
+          ></textarea>
+        </>
+      )}
     </div>
   );
 };

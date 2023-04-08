@@ -42,17 +42,24 @@ export const BasketProduct = ({
             </span>
           </Link>
         </div>
+        <div className={styles.text}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+          interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis
+          vulputate feugiat massa vestibulum duis.
+        </div>
       </div>
       <div className={styles.separator}></div>
-      <div className={styles.count}>
-        <button className={styles.counter}>-</button>
-        <div className={styles.quantity}>1</div>
-        <button className={styles.counter}>+</button>
+      <div className={styles.wrap}>
+        <div className={styles.count}>
+          <button className={styles.counter}>-</button>
+          <div className={styles.quantity}>1</div>
+          <button className={styles.counter}>+</button>
+        </div>
+        <div className={styles.separator}></div>
+        <div className={styles.price}>{price}</div>
+        <div className={styles.separator}></div>
+        <img src={deleteBtn} alt="deleteBtn" className={styles.deleteBtn} />
       </div>
-      <div className={styles.separator}></div>
-      <div className={styles.price}>{price}</div>
-      <div className={styles.separator}></div>
-      <img src={deleteBtn} alt="deleteBtn" className={styles.deleteBtn} />
     </div>
   );
 };

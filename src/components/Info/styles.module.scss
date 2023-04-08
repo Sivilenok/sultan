@@ -1,3 +1,11 @@
+@import "/src/ui/breakpoints.scss";
+
+.info {
+  @include mediaMobile {
+    padding-top: 30px;
+  }
+}
+
 .item {
   width: 289px;
   height: 134px;
@@ -10,7 +18,6 @@
     transform: scale(1.1);
     box-shadow: 0 0 20px #3f4e65;
   }
-
 }
 
 .wrap {

@@ -1,3 +1,8 @@
+@import "/src/ui/breakpoints.scss";
+
 .basketlist {
-    padding-bottom: 50px;
+  padding-bottom: 50px;
+  @include mediaMobile {
+    padding: 0 15px;
+  }
 }

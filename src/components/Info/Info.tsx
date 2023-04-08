@@ -1,7 +1,20 @@
+import { useEffect, useState } from "react";
 import { delivery, payment, question } from "../../assets";
 import styles from "./styles.module.scss";
 
 export const Info = () => {
+  const [isDekstop, setisDekstop] = useState(window.innerWidth > 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setisDekstop(window.innerWidth > 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <div className={styles.info}>
       <div className={styles.item}>
@@ -39,18 +52,22 @@ export const Info = () => {
           вопросы.
         </div>
       </div>
-      <div className={styles.wrapper}>
-        <div className={styles.number}>1</div>
-        <div className={styles.title}>Дополнительно</div>
-      </div>
-      <div className={styles.text}>Комментарий</div>
-      <textarea
-        id="comment"
-        name="comment"
-        rows={4}
-        className={styles.comments}
-        placeholder="Введите ваш комментарий"
-      ></textarea>
+      {isDekstop && (
+        <>
+          <div className={styles.wrapper}>
+            <div className={styles.number}>3</div>
+            <div className={styles.title}>Дополнительно</div>
+          </div>
+          <div className={styles.text}>Комментарий</div>
+          <textarea
+            id="comment"
+            name="comment"
+            rows={4}
+            className={styles.comments}
+            placeholder="Введите ваш комментарий"
+          ></textarea>
+        </>
+      )}
     </div>
   );
 };

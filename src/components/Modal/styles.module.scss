@@ -1,3 +1,5 @@
+@import "/src/ui/breakpoints.scss";
+
 .screen {
   position: fixed;
   top: 0;
@@ -12,23 +14,26 @@
 }
 
 .window {
-    position: relative;
-    width: 735px;
-    height: 424px;
-    background: #ffffff;
-    border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: relative;
+  width: 735px;
+  height: 424px;
+  background: #ffffff;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include mediaMobile {
+    width: 335px;
+    height: 324px;
   }
-  
+}
 
 .closeButton {
-    position: absolute;
-    top: 36px;
-    right: 36px;
-    width: 12px;
-    height: 12px;
-    color: #FFC85E;
-    background: none;
+  position: absolute;
+  top: 36px;
+  right: 36px;
+  width: 12px;
+  height: 12px;
+  color: #ffc85e;
+  background: none;
 }

@@ -2,15 +2,19 @@ import { Global } from "@emotion/react";
 import { globalStyles } from "./ui/globalStyles";
 import { RouterProvider } from "react-router-dom";
 import { router } from "./router";
-import { setAllProducts, useAppDispatch } from "./store";
+import storeProducts from "./services/products.json"
 import { useEffect } from "react";
-import products from "./services/products.json";
+import { useDispatch } from "react-redux";
+import { setAllProducts, setPopularProducts } from "./store";
+
 
 export const App = () => {
-  const dispatch = useAppDispatch();
-  useEffect(() =>{
-    dispatch(setAllProducts(products));
-  }, [dispatch, products]);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(setAllProducts(storeProducts.products))
+    dispatch(setPopularProducts(storeProducts.products.filter(item => item.popular)))
+  }, [])
 
   return (
     <>

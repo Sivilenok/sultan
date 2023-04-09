@@ -1,8 +1,9 @@
-import { selectAllProducts, useAppSelector } from "../../store";
+import { selectAllProducts, useAppSelector, selectPopularProducts } from "../../store";
 import { Product, Products } from "../../services/products";
 import { ProductItem } from "../ProductItem/ProductItem";
 import Wrapper from "../Wrapper/Wrapper";
 import styles from "./styles.module.scss";
+import { useDispatch } from "react-redux";
 
 interface IProps {
   products: Products["all"];
@@ -10,15 +11,16 @@ interface IProps {
 }
 
 export const ProductList = ({ className, products }: IProps) => {
-  const popularProducts = useAppSelector(selectAllProducts);
+//  const products = useAppSelector(selectPopularProducts);
+//  const dispatch = useDispatch();
+
+console.log(products)
 
   return (
     <div className={`${styles.productslist} ${styles.list} ${className}`}>
-      {Array.isArray(products) &&
-        products.map((product: Product) => (
+        {products.map((product: Product) => (
           <Wrapper key={product.id}>
             <ProductItem
-              isPopular={false}
               className={styles.list}
               {...product}
             />

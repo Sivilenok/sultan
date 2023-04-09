@@ -4,13 +4,9 @@
   padding-top: 40px;
 
   @include mediaMobile {
-    position: absolute;
     background: white;
     text-align: left;
-    width: 100%;
-    top: 35px;
-    left: 0;
-    z-index: 30;
+    padding-top: 0;
   }
 }
 
@@ -42,4 +38,8 @@
   @include mediaMobile {
     line-height: 17px;
   }
+}
+
+.departuresDown {
+  display: block;
 }

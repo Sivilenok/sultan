@@ -18,5 +18,6 @@ export interface Product {
   brand: string;
   description: string;
   price: number;
+  count?: number;
 }
 

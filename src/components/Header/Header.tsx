@@ -43,7 +43,7 @@ export const Header = () => {
   return (
     <>
       {isMobile ? (
-        <>
+        <Wrapper>
           <div className={styles.mobile}>
             <div className={styles.up}>
               <img
@@ -146,7 +146,7 @@ export const Header = () => {
               </div>
             )}
           </div>
-        </>
+        </Wrapper>
       ) : (
         <>
           <div className={styles.wrapperUp}>

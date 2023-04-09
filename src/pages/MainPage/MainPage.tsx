@@ -18,9 +18,7 @@ interface IProps {
   };
 }
 
-export const MainPage = () => {
-  const { all: products } = useAppSelector((state) => state.products);
-  
+export const MainPage = () => {  
   return (
     <main className={styles.main}>
       <Banner isBreadcrumbHidden={true} />
@@ -32,7 +30,7 @@ export const MainPage = () => {
           &nbsp;
           <span style={{ color: "#111111" }}>товары</span>
         </h1>
-        <ProductList products={products} className={styles.list} />
+        <ProductList products={[]} className={styles.list} />
         <ProductCategories />
         <Sale />
         <BestGoods />

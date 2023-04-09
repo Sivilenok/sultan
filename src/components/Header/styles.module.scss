@@ -83,8 +83,8 @@
   font-size: 14px;
   line-height: 21px;
   color: #3f4e65;
-  &:hover {
-    border-radius: 1000px;
+  transition: box-shadow 0.3s;
+  &:active {
     box-shadow: 0 0 10px #3f4e65;
   }
 }
@@ -118,7 +118,7 @@
   }
   @include mediaMobile {
     width: 290px;
-    height: 70px;
+    height: 50px;
   }
 }
 
@@ -242,7 +242,7 @@
 
 .up {
   display: flex;
-  gap: 65px;
+  justify-content: space-between;
   padding: 15px;
   align-items: center;
   border-bottom: 1px solid rgba(63, 78, 101, 0.1);
@@ -280,7 +280,7 @@
 
 .menu {
   position: fixed;
-  top: 121px; /* высота хедера */
+  top: 120px; /* высота хедера */
   left: 0;
   right: 0;
   bottom: 0;
@@ -292,7 +292,7 @@
 .wrapperMenu {
   width: 100%;
   background: #ffffff;
-  padding: 5px 20px;
+  padding: 0 20px;
   overflow-y: scroll;
   border-top: 1px solid rgba(63, 78, 101, 0.1);
 }
@@ -324,4 +324,12 @@
   color: #3f4e65;
   border-top: 1px dashed rgba(63, 78, 101, 0.1);
   padding-top: 25px;
+}
+
+.mobile {
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  background-color: white;
+  width: auto;
 }

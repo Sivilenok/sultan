@@ -74,7 +74,6 @@ export const FilterDown = ({onClick}: Props) => {
         <div className={styles.wrapMob}>
           <div className={styles.titleMob}>ПОДБОР ПО ПАРАМЕТРАМ</div>
           <button className={styles.btnMob} onClick={toggleDropdown}>
-            {isOpen && <FilterDepartures />}
             <img
               src={isOpen ? downArrow : upArrow }
               alt="upArrow"
@@ -82,6 +81,7 @@ export const FilterDown = ({onClick}: Props) => {
             />
           </button>
         </div>
+        {isOpen && <FilterDepartures />}
         <div className={styles.title}>ПОДБОР ПО ПАРАМЕТРАМ</div>
         <div className={styles.subtitle}>Цена ₸</div>
         <div className={styles.count}>

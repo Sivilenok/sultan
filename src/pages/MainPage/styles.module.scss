@@ -20,3 +20,11 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
 }
+
+.main {
+    margin-top: 100px;
+    @include mediaMobile{
+        margin-top: 175px;
+
+    }
+}

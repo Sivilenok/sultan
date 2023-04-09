@@ -1,4 +1,4 @@
-import { Outlet, useNavigate } from "react-router-dom";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { Footer } from "../Footer/Footer";
 import { Header } from "../Header/Header";
 import { Breadcrumb } from "../Breadcrumb/Breadcrumb";
@@ -17,15 +17,16 @@ export const Layout = () => {
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+  const location = useLocation();
   const navigate = useNavigate();
 
   const handleGoBack = () => {
-    navigate(-1); 
-  }
+    navigate(-1);
+  };
   return (
     <>
       <Header />
-      {isMobile ? (
+      {isMobile && location.pathname !== "/" ? (
         <button className={styles.btn} onClick={handleGoBack}>
           <img src={back} alt="back" />
         </button>

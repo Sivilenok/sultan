@@ -14,7 +14,7 @@ interface IProps {
   brand: string;
   description: string;
   price: number;
-  isPopular: boolean;
+  popular: boolean;
   className: string;
 }
 
@@ -28,13 +28,12 @@ export const ProductItem = ({
   manufacturer,
   brand,
   price,
-  isPopular
+  popular,
 }: IProps) => {
   return (
     <>
-      {isPopular && (
         <div className={styles.product}>
-          <div className={styles.popular}>ПОПУЛЯРНОЕ</div>
+          {popular && <div className={styles.popular}>ПОПУЛЯРНОЕ</div>}
           <img src={image_url} alt="image_url" className={styles.picture} />
           <div className={styles.size}>
             {size}&nbsp;{size_type}
@@ -73,7 +72,6 @@ export const ProductItem = ({
             </button>
           </div>
         </div>
-      )}
     </>
   );
 };

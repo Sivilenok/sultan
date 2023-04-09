@@ -2,6 +2,7 @@ import { Link, generatePath } from "react-router-dom";
 import styles from "./styles.module.scss";
 import { ROUTE } from "../../router";
 import { deleteBtn } from "../../assets";
+import { useState } from "react";
 
 interface IProps {
   image_url: string;
@@ -20,6 +21,17 @@ export const BasketProduct = ({
   size_type,
   price,
 }: IProps) => {
+  const [quantity, setQuantity] = useState(1);
+  const handleAddQuantity = () => {
+    setQuantity(quantity + 1);
+  };
+
+  const handleSubtractQuantity = () => {
+    if (quantity > 1) {
+      setQuantity(quantity - 1);
+    }
+  };
+
   return (
     <div className={styles.basketProduct}>
       <img src={image_url} alt="image_url" className={styles.picture} />
@@ -51,9 +63,13 @@ export const BasketProduct = ({
       <div className={styles.separator}></div>
       <div className={styles.wrap}>
         <div className={styles.count}>
-          <button className={styles.counter}>-</button>
-          <div className={styles.quantity}>1</div>
-          <button className={styles.counter}>+</button>
+          <button className={styles.counter} onClick={handleSubtractQuantity}>
+            -
+          </button>
+          <div className={styles.quantity}>{quantity}</div>
+          <button className={styles.counter} onClick={handleAddQuantity}>
+            +
+          </button>
         </div>
         <div className={styles.separator}></div>
         <div className={styles.price}>{price}</div>

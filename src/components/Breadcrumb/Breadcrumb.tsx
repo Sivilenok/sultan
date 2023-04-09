@@ -8,6 +8,10 @@ export const Breadcrumb = () => {
   const crumbs = [];
   const currentPath = useLocation().pathname;
 
+  if (currentPath === "/") {
+    return null;
+  }
+
   if (currentPath !== "/") {
     crumbs.push({ path: ROUTE.HOME, title: "Главная" });
 
@@ -58,6 +62,8 @@ export const Breadcrumb = () => {
       </li>
     );
   });
+
+
 
   return (
     <nav aria-label={styles.nav}>

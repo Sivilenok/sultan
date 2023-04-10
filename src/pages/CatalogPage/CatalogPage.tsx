@@ -1,25 +1,26 @@
-import { useCallback, useEffect, useState } from "react";
-import { down, up, upArrow } from "../../assets";
+import { useEffect, useState } from "react";
 import {
-  FilterDepartures,
   FilterDown,
-  FilterUp,
   Pagination,
   ProductList,
   Sort,
 } from "../../components";
-import { useAppSelector } from "../../store";
+import { useAppSelector, selectAllProducts } from "../../store";
 
 import styles from "./styles.module.scss";
 import Wrapper from "../../components/Wrapper/Wrapper";
+import { Filter } from "../../components/Filter/Filter";
 
 export const CatalogPage = () => {
-  const products = useAppSelector((state) => state.products.all);
-
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [showDepartures, setShowDepartures] = useState(false);
+  const [selectedFilter, setSelectedFilter] = useState("");
+  const products = useAppSelector(selectAllProducts);
 
+  const handleFilterSelect = (filter: string) => {
+    setSelectedFilter(filter);
+  };
   const handlePageChange = (pageNumber: number) => {
     setCurrentPage(pageNumber);
     window.scrollTo(0, 0);
@@ -45,7 +46,7 @@ export const CatalogPage = () => {
         <div className={styles.mobile}>
           <div className={styles.title}>Косметика и гигиена</div>
           <FilterDown onClick={() => setShowDepartures(!showDepartures)} />
-          <ProductList products={[]} />
+          <ProductList products={products} className={styles.list} />
           <Pagination
             currentPage={currentPage}
             totalPages={5}
@@ -66,11 +67,20 @@ export const CatalogPage = () => {
             <div className={styles.title}>Косметика и гигиена</div>
             <Sort />
           </div>
-          <FilterUp onClick={handleClick} text={"Уход за телом"} />
+          <Filter
+            selectedFilter={selectedFilter}
+            onFilterSelect={handleFilterSelect}
+            onClick={handleClick}
+          />
           <div className={styles.wrap}>
             <div className={styles.wrapFilters}>
               <FilterDown onClick={() => setShowDepartures(!showDepartures)} />
-              <FilterDepartures />
+              <Filter
+                onFilterSelect={handleFilterSelect}
+                selectedFilter={selectedFilter}
+                onClick={handleClick}
+                className={styles.filterLeft}
+              />
             </div>
             <ProductList products={products} className={styles.list} />
           </div>

@@ -17,7 +17,7 @@ export const ProductList = ({ className, products }: IProps) => {
 console.log(products)
 
   return (
-    <div className={`${styles.productslist} ${styles.list} ${className}`}>
+    <div className={`${styles.productslist} ${styles.list}`}>
         {products.map((product: Product) => (
           <Wrapper key={product.id}>
             <ProductItem

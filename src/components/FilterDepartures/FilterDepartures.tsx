@@ -2,9 +2,23 @@ import { useEffect, useState } from "react";
 import { Sort } from "../Sort/Sort";
 import Wrapper from "../Wrapper/Wrapper";
 import styles from "./styles.module.scss";
+import { Filter } from "../Filter/Filter";
 
-export const FilterDepartures = () => {
+interface IProps {
+  onFilterSelect: (filter: string) => void;
+  selectedFilter: string;
+  onClick: () => void;
+  className?: string;
+}
+
+export const FilterDepartures = ({
+  onFilterSelect,
+  selectedFilter,
+  onClick,
+  className
+}: IProps) => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
@@ -14,25 +28,22 @@ export const FilterDepartures = () => {
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  const handleItemClick = (filter: string) => {
+    onFilterSelect(filter);
+  };
+
   return (
     <Wrapper>
-
-
       <div className={styles.departures}>
         <h1 className={styles.title}>Уход за телом</h1>
-        <div className={styles.item}>Уход за телом</div>
-        <div className={styles.item}>Уход за руками</div>
-        <div className={styles.item}>Уход за ногами</div>
-        <div className={styles.item}>Уход за лицом</div>
-        <div className={styles.item}>Уход за волосами</div>
-        <div className={styles.item}>Уход за волосами</div>
-        <div className={styles.item}>Средства для загара</div>
-        <div className={styles.item}>Средства для бритья</div>
-        <div className={styles.item}>Подарочные наборы</div>
-        <div className={styles.item}>Гигиеническая продукция</div>
-        {isMobile && (
-          <Sort />
-        )}
+        <Filter
+          selectedFilter={selectedFilter}
+          onFilterSelect={onFilterSelect}
+          onClick={onClick}
+          className={styles.filterLeft}
+        />
+        {isMobile && <Sort />}
       </div>
     </Wrapper>
   );

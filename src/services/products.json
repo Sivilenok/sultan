@@ -3,7 +3,7 @@
         {
             "id": "1",
             "category": "Уход за лицом",
-            "popular": true,
+            "popular": false,
             "image_url": "http://s3.amazonaws.com/donovanbailey/products/api_featured_images/000/001/002/original/open-uri20171227-4-1ne7r73?1514343097",
             "name": "BEAUUGREEN",
             "size_type": "шт",
@@ -17,7 +17,7 @@
         {
             "id": "2",
             "category": "Бытовая химия",
-            "popular": true,
+            "popular": false,
             "image_url": "http://s3.amazonaws.com/donovanbailey/products/api_featured_images/000/001/004/original/open-uri20171227-4-1wp63cr?1514344255p",
             "name": "ARIEL",
             "size_type": "шт",
@@ -59,7 +59,7 @@
         {
             "id": "5",
             "category": "Уход за лицом",
-            "popular": true,
+            "popular": false,
             "image_url": "http://s3.amazonaws.com/donovanbailey/products/api_featured_images/000/000/938/original/open-uri20171224-4-52epl7?1514082690",
             "name": "LA FERME",
             "size_type": "мл",
@@ -101,7 +101,7 @@
         {
             "id": "8",
             "category": "Уход за лицом",
-            "popular": true,
+            "popular": false,
             "image_url": "http://s3.amazonaws.com/donovanbailey/products/api_featured_images/000/000/933/original/open-uri20171224-4-18zslbp?1514082681",
             "name": "DOVE",
             "size_type": "мл",
@@ -129,7 +129,7 @@
         {
             "id": "10",
             "category": "Уход за телом",
-            "popular": true,
+            "popular": false,
             "image_url": "http://s3.amazonaws.com/donovanbailey/products/api_featured_images/000/000/902/original/open-uri20171224-4-1v926lt?1514082599",
             "name": "АРОМА-ВАННА",
             "size_type": "г",
@@ -143,7 +143,7 @@
         {
             "id": "11",
             "category": "Уход за телом",
-            "popular": true,
+            "popular": false,
             "image_url": "http://s3.amazonaws.com/donovanbailey/products/api_featured_images/000/000/900/original/open-uri20171224-4-1byvmqd?1514082593",
             "name": "CAMAY",
             "size_type": "мл",
@@ -157,7 +157,7 @@
         {
             "id": "12",
             "category": "Уход за телом",
-            "popular": true,
+            "popular": false,
             "image_url": "http://s3.amazonaws.com/donovanbailey/products/api_featured_images/000/000/894/original/data?1514082575",
             "name": "BIOMIO",
             "size_type": "г",

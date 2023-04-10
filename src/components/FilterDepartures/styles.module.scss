@@ -2,6 +2,7 @@
 
 .departures {
   padding-top: 40px;
+  display: block;
 
   @include mediaMobile {
     background: white;
@@ -41,5 +42,9 @@
 }
 
 .departuresDown {
+  display: block;
+}
+
+.filterLeft {
   display: block;
 }

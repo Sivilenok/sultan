@@ -1,4 +1,6 @@
-.filter {
+@import "/src/ui/breakpoints.scss";
+
+.btnUp {
   width: 100px;
   height: 70px;
   background: #ffffff;
@@ -18,8 +20,29 @@
   }
 }
 
-.departuresUp {
+.btnLeft {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  color: #3f4e65;
+  padding: 5px 0;
+  cursor: pointer;
+
+  &:hover {
+    color: #ffc85e;
+  }
+  @include mediaMobile {
+    line-height: 17px;
+  }
+}
+
+.filterUp {
   display: flex;
   gap: 11px;
+}
+
+.filterLeft {
+  display: block;
 }
 

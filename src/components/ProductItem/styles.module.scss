@@ -1,3 +1,5 @@
+@import "/src/ui/breakpoints.scss";
+
 .product {
   width: 326px;
   height: 490px;
@@ -10,6 +12,9 @@
   &:hover {
     transform: scale(1.1);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  }
+  @include mediaMobile {
+    padding: 10px 15px;
   }
 }
 

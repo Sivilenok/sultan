@@ -9,16 +9,13 @@ import {
 } from "../../components";
 import Wrapper from "../../components/Wrapper/Wrapper";
 import { Product } from "../../services/products";
-import { useAppSelector } from "../../store";
+import { useAppSelector, selectPopularProducts } from "../../store";
 import styles from "./styles.module.scss";
 
-interface IProps {
-  products: {
-    all: Product[];
-  };
-}
 
 export const MainPage = () => {  
+  const productsPopular = useAppSelector(selectPopularProducts);
+
   return (
     <main className={styles.main}>
       <Banner isBreadcrumbHidden={true} />
@@ -30,7 +27,9 @@ export const MainPage = () => {
           &nbsp;
           <span style={{ color: "#111111" }}>товары</span>
         </h1>
-        <ProductList products={[]} className={styles.list} />
+        <div className={styles.mobile}>
+        <ProductList products={productsPopular} className={styles.list} />
+        </div>
         <ProductCategories />
         <Sale />
         <BestGoods />

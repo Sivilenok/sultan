@@ -9,7 +9,7 @@ export * from './Sale/Sale';
 export * from './BestGoods/BestGoods';
 export * from './Contacts/Contacts';
 export * from './Breadcrumb/Breadcrumb';
-export * from './FilterUp/FilterUp';
+export * from './Filter/Filter';
 export * from './FilterDown/FilterDown';
 export * from './FilterDepartures/FilterDepartures';
 export * from './Pagination/Pagination';

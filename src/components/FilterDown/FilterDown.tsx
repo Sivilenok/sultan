@@ -5,6 +5,7 @@ import manufacturers from "../../services/products.json";
 import Wrapper from "../Wrapper/Wrapper";
 import { Product } from "../../services/products";
 import { FilterDepartures } from "../FilterDepartures/FilterDepartures";
+import { Filter } from "../Filter/Filter";
 
 interface IManufacturer {
   products: Product[];
@@ -16,7 +17,8 @@ interface Props {
   onClick: () => void;
 }
 
-export const FilterDown = ({onClick}: Props) => {
+export const FilterDown = ({ onClick }: Props) => {
+  const [selectedFilter, setSelectedFilter] = useState("");
   const [value, setValue] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const handleChange: React.ChangeEventHandler<HTMLSelectElement> = (event) => {
@@ -32,6 +34,9 @@ export const FilterDown = ({onClick}: Props) => {
     }))
   );
 
+  const handleFilterSelect = (filter: string) => {
+    setSelectedFilter(filter);
+  };
   const toggleShowSort = () => {
     setShowSort(!showShowSort);
     setArrowDirection(arrowDirection === "down" ? "up" : "down");
@@ -75,13 +80,19 @@ export const FilterDown = ({onClick}: Props) => {
           <div className={styles.titleMob}>ПОДБОР ПО ПАРАМЕТРАМ</div>
           <button className={styles.btnMob} onClick={toggleDropdown}>
             <img
-              src={isOpen ? downArrow : upArrow }
+              src={isOpen ? downArrow : upArrow}
               alt="upArrow"
               className={styles.upArrow}
             />
           </button>
         </div>
-        {isOpen && <FilterDepartures />}
+        {isOpen && (
+              <Filter
+                onFilterSelect={handleFilterSelect}
+                selectedFilter={selectedFilter}
+                onClick={onClick}
+              />
+            )}
         <div className={styles.title}>ПОДБОР ПО ПАРАМЕТРАМ</div>
         <div className={styles.subtitle}>Цена ₸</div>
         <div className={styles.count}>

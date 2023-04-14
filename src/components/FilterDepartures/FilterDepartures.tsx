@@ -15,7 +15,7 @@ export const FilterDepartures = ({
   onFilterSelect,
   selectedFilter,
   onClick,
-  className
+  className,
 }: IProps) => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
@@ -41,8 +41,7 @@ export const FilterDepartures = ({
           selectedFilter={selectedFilter}
           onFilterSelect={onFilterSelect}
           onClick={onClick}
-          className={styles.filterLeft}
-        />
+          className={styles.filterLeft}/>
         {isMobile && <Sort />}
       </div>
     </Wrapper>

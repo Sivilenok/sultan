@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import {
+  Filter,
   FilterDown,
   Pagination,
   ProductList,
@@ -9,7 +10,6 @@ import { useAppSelector, selectAllProducts } from "../../store";
 
 import styles from "./styles.module.scss";
 import Wrapper from "../../components/Wrapper/Wrapper";
-import { Filter } from "../../components/Filter/Filter";
 
 export const CatalogPage = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -17,6 +17,9 @@ export const CatalogPage = () => {
   const [showDepartures, setShowDepartures] = useState(false);
   const [selectedFilter, setSelectedFilter] = useState("");
   const products = useAppSelector(selectAllProducts);
+  const productsPerPage = 15;
+  const startIndex = (currentPage - 1) * productsPerPage;
+  const endIndex = startIndex + productsPerPage;
 
   const handleFilterSelect = (filter: string) => {
     setSelectedFilter(filter);
@@ -46,7 +49,10 @@ export const CatalogPage = () => {
         <div className={styles.mobile}>
           <div className={styles.title}>Косметика и гигиена</div>
           <FilterDown onClick={() => setShowDepartures(!showDepartures)} />
-          <ProductList products={products} className={styles.list} />
+          <ProductList
+            products={products.slice(startIndex, endIndex)}
+            className={styles.list}
+          />
           <Pagination
             currentPage={currentPage}
             totalPages={5}
@@ -71,6 +77,7 @@ export const CatalogPage = () => {
             selectedFilter={selectedFilter}
             onFilterSelect={handleFilterSelect}
             onClick={handleClick}
+            className={styles.className}
           />
           <div className={styles.wrap}>
             <div className={styles.wrapFilters}>
@@ -79,10 +86,13 @@ export const CatalogPage = () => {
                 onFilterSelect={handleFilterSelect}
                 selectedFilter={selectedFilter}
                 onClick={handleClick}
-                className={styles.filterLeft}
+                className={styles.className}
               />
             </div>
-            <ProductList products={products} className={styles.list} />
+            <ProductList
+              products={products.slice(startIndex, endIndex)}
+              className={styles.list}
+            />
           </div>
           <Pagination
             currentPage={currentPage}

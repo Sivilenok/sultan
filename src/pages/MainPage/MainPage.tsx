@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useDispatch } from "react-redux";
 import {
   Banner,
   BestGoods,
@@ -8,7 +8,6 @@ import {
   Sale,
 } from "../../components";
 import Wrapper from "../../components/Wrapper/Wrapper";
-import { Product } from "../../services/products";
 import { useAppSelector, selectPopularProducts } from "../../store";
 import styles from "./styles.module.scss";
 
@@ -27,9 +26,7 @@ export const MainPage = () => {
           &nbsp;
           <span style={{ color: "#111111" }}>товары</span>
         </h1>
-        <div className={styles.mobile}>
-        <ProductList products={productsPopular} className={styles.list} />
-        </div>
+        <ProductList products={productsPopular} className={styles.сlassName} />
         <ProductCategories />
         <Sale />
         <BestGoods />

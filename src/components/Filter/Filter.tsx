@@ -1,4 +1,3 @@
-import Wrapper from "../Wrapper/Wrapper";
 import styles from "./styles.module.scss";
 
 interface IProps {
@@ -18,13 +17,11 @@ export const Filter = ({
   };
 
   return (
-    <div className={`${styles.filterUp} ${styles.filterLeft}`}>
+    <div className={`${styles.filterUp} ${className}`}>
       <button
-        className={`${styles.btnUp} ${styles.btnLeft}`}
-        onClick={() => handleFilterClick("Filter 1")}
-        style={
-          selectedFilter === "Filter 1" ? { backgroundColor: "#E2E2E2" } : {}
-        }
+  className={`${styles.btnUp} ${styles.btnLeft} ${selectedFilter === "Filter 1" ? styles.selectedFilter : ""}`}
+  onClick={() => handleFilterClick("Filter 1")}
+       
       >
         Уход за телом
       </button>

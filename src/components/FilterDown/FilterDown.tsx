@@ -87,12 +87,11 @@ export const FilterDown = ({ onClick }: Props) => {
           </button>
         </div>
         {isOpen && (
-              <Filter
-                onFilterSelect={handleFilterSelect}
-                selectedFilter={selectedFilter}
-                onClick={onClick}
-              />
-            )}
+          <Filter
+            onFilterSelect={handleFilterSelect}
+            selectedFilter={selectedFilter}
+            onClick={onClick}/>
+        )}
         <div className={styles.title}>ПОДБОР ПО ПАРАМЕТРАМ</div>
         <div className={styles.subtitle}>Цена ₸</div>
         <div className={styles.count}>

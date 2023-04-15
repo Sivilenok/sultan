@@ -1,20 +1,22 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { Product } from '../../services/products';
+import { createSlice } from "@reduxjs/toolkit";
+import { Product } from "../../services/products";
 
 interface ProductsState {
   all: Product[];
   popular: Product[];
   cart: Product[];
+  sortBy: "name" | "price";
 }
 
 const initialState: ProductsState = {
   all: [],
   popular: [],
   cart: [],
+  sortBy: "name",
 };
 
 export const productsSlice = createSlice({
-  name: 'products',
+  name: "products",
   initialState: initialState,
   reducers: {
     setAllProducts: (state, action) => {
@@ -35,12 +37,19 @@ export const productsSlice = createSlice({
       }
     },
     removeCartProduct: (state, action) => {},
-  }
+    sortProducts: (state, action) => {
+      state.sortBy = action.payload;
+      state.all.sort((a, b) => {
+        if (state.sortBy === "name") {
+          return a.name.localeCompare(b.name);
+        } else {
+          return a.price - b.price;
+        }
+      });
+    },
+  },
 });
 
-export const {
-  setAllProducts,
-  setPopularProducts,
-  addCartProduct,
-} = productsSlice.actions;
+export const { setAllProducts, setPopularProducts, addCartProduct } =
+  productsSlice.actions;
 export default productsSlice.reducer;

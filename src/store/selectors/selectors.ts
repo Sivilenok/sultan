@@ -1,3 +1,4 @@
+import { Product } from "../../services/products";
 import { RootState } from "../store";
 
 export const selectAllProducts = (state: RootState) => state.products.all;

@@ -1,34 +1,82 @@
-import { useCallback, useState } from "react";
+import { selectAllProducts, setAllProducts } from "../../store";
 import styles from "./styles.module.scss";
-import { down, up } from "../../assets";
+import { useDispatch, useSelector } from "react-redux";
+import Select from "react-select";
+import { useState } from "react";
 
 export const Sort = () => {
-  const [orderAsc, setOrderAsc] = useState<boolean>(true);
-  const [orderField, setOrderField] = useState<"name" | "price">("name");
-  const [showSort, setShowSort] = useState<boolean>(true);
+  const dispatch = useDispatch();
+  const allProducts = useSelector(selectAllProducts);
+  const [selectedOption, setSelectedOption] = useState(null);
 
-  const handleChange = useCallback((event: React.ChangeEvent<HTMLSelectElement>) => {
-    const { value } = event.target;
-    const [field, order] = value.split('-');
-    setOrderField(field as "name" | "price");
-    setOrderAsc(order === 'asc');
-  }, []);
+  const handleSortChange = (selectedOption: any) => {
+    setSelectedOption(selectedOption);
+
+    switch (selectedOption.value) {
+      case "name-asc":
+        const productsSortedByNameAsc = [...allProducts].sort((a, b) =>
+          a.name.localeCompare(b.name)
+        );
+        dispatch(setAllProducts(productsSortedByNameAsc));
+        break;
+      case "name-desc":
+        const productsSortedByNameDesc = [...allProducts].sort((a, b) =>
+          b.name.localeCompare(a.name)
+        );
+        dispatch(setAllProducts(productsSortedByNameDesc));
+        break;
+      case "price-asc":
+        const productsSortedByPriceAsc = [...allProducts].sort(
+          (a, b) => a.price - b.price
+        );
+        dispatch(setAllProducts(productsSortedByPriceAsc));
+        break;
+      case "price-desc":
+        const productsSortedByPriceDesc = [...allProducts].sort(
+          (a, b) => b.price - a.price
+        );
+        dispatch(setAllProducts(productsSortedByPriceDesc));
+        break;
+      default:
+        break;
+    }
+  };
+
+  const options = [
+    { value: "name-asc", label: "Название (возр.)" },
+    { value: "name-desc", label: "Название (убыв.)" },
+    { value: "price-asc", label: "Цена (возр.)" },
+    { value: "price-desc", label: "Цена (убыв.)" },
+  ];
 
   return (
     <div className={styles.sort}>
       <div className={styles.text}>Сортировка:</div>
       <div className={styles.sorting}>
-        <select className={styles.select} onChange={handleChange}>
-          <option value="name-asc">Название (возр.)</option>
-          <option value="name-desc">Название (убыв.)</option>
-          <option value="price-asc">Цена (возр.)</option>
-          <option value="price-desc">Цена (убыв.)</option>
-        </select>
-        <img
-          src={showSort ? up : down}
-          alt="arrow"
-          className={styles.arrow}
-          onClick={() => setShowSort((prevState) => !prevState)}
+        <Select
+          className={styles.select}
+          value={selectedOption}
+          onChange={handleSortChange}
+          options={options}
+          placeholder="Название"
+          styles={{
+            control: (provided, state) => ({
+              ...provided,
+              border: "#fcfcfc",
+              boxShadow: "none",
+              "&:hover": {
+                borderColor: "#fcfcfc",
+              },
+            }),
+            option: (provided, state) => ({
+              ...provided,
+              backgroundColor: state.isSelected ? "#eee" : "#fff",
+              "&:hover": {
+                backgroundColor: "#ccc",
+              },
+            }),
+            
+          }}
         />
       </div>
     </div>

@@ -6,7 +6,6 @@ import styles from "./styles.module.scss";
 import Wrapper from "../../components/Wrapper/Wrapper";
 import { FilterUp } from "../../components/FilterUp/FilterUp";
 import { FilterLeft } from "../../components/FilterLeft/FilterLeft";
-import { Product } from "../../services/products";
 
 export const CatalogPage = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -87,7 +86,7 @@ export const CatalogPage = () => {
         <Wrapper>
           <div className={styles.wrapper}>
             <div className={styles.title}>Косметика и гигиена</div>
-            <Sort />
+            <Sort/>
           </div>
           <FilterUp
             filters={filters}

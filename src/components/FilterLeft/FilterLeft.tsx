@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from "./styles.module.scss";
 import { Sort } from "../Sort/Sort";
+import { selectAllProducts, useAppSelector } from "../../store";
 
 interface Props {
   filters: string[];
@@ -14,6 +15,7 @@ export const FilterLeft = ({
   onFilterClick,
 }: Props) => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const products = useAppSelector(selectAllProducts);
 
   useEffect(() => {
     const handleResize = () => {
@@ -39,7 +41,8 @@ export const FilterLeft = ({
           {filter}
         </button>
       ))}
-      {isMobile && <Sort />}
+      {isMobile && <Sort />
+}
     </div>
   );
 };

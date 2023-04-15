@@ -16,7 +16,6 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
-  padding-bottom: 15px;
 }
 
 .subtitle {
@@ -198,6 +197,7 @@ input[type="checkbox"] {
   @include mediaMobile {
     display: flex;
     gap: 43px;
+    align-items: center;
   }
 }
 

@@ -9,9 +9,7 @@ export * from './Sale/Sale';
 export * from './BestGoods/BestGoods';
 export * from './Contacts/Contacts';
 export * from './Breadcrumb/Breadcrumb';
-export * from './Filter/Filter';
 export * from './FilterDown/FilterDown';
-export * from './FilterDepartures/FilterDepartures';
 export * from './Pagination/Pagination';
 export * from './BasketProduct/BasketProduct';
 export * from './ContactDetails/ContactDetails';
@@ -21,6 +19,10 @@ export * from './OrderList/OrderList';
 export * from './Modal/Modal';
 export * from './Wrapper/Wrapper';
 export * from './Sort/Sort';
+export * from './FilterLeft/FilterLeft';
+export * from './FilterUp/FilterUp';
+
+
 
 
 

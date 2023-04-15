@@ -1,28 +1,46 @@
 @import "/src/ui/breakpoints.scss";
 
 .btnLeft {
-    background: none;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 21px;
-    color: #3f4e65;
-    padding: 5px 0;
-    cursor: pointer;
-  
-    &:hover {
-      color: #ffc85e;
-    }
-    &:active {
-      background-color: red;
-  }
-    @include mediaMobile {
-      line-height: 17px;
-    }
-  }
+  background: none;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  color: #3f4e65;
+  padding: 5px 0;
+  cursor: pointer;
 
-  .filterLeft {
-    display: flex;
-    flex-direction: column;
+  &:hover {
+    color: #ffc85e;
   }
-  
+  &.active {
+    color: #ffc85e;
+  }
+  @include mediaMobile {
+    line-height: 17px;
+  }
+}
+
+.filterLeft {
+  display: flex;
+  flex-direction: column;
+  padding-top: 40px;
+  align-items: start;
+  @include mediaMobile {
+    padding-top: 20px;
+    width: 100%;
+  }
+}
+
+.title {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  text-transform: uppercase;
+  color: #111111;
+  padding-bottom: 10px;
+  @include mediaMobile {
+    display: none;
+  }
+}

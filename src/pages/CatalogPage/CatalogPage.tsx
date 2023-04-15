@@ -1,17 +1,12 @@
 import { useEffect, useState } from "react";
-import {
-  Filter,
-  FilterDown,
-  Pagination,
-  ProductList,
-  Sort,
-} from "../../components";
+import { FilterDown, Pagination, ProductList, Sort } from "../../components";
 import { useAppSelector, selectAllProducts } from "../../store";
 
 import styles from "./styles.module.scss";
 import Wrapper from "../../components/Wrapper/Wrapper";
 import { FilterUp } from "../../components/FilterUp/FilterUp";
 import { FilterLeft } from "../../components/FilterLeft/FilterLeft";
+import { Product } from "../../services/products";
 
 export const CatalogPage = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -26,6 +21,10 @@ export const CatalogPage = () => {
   const handleFilterClick = (filter: string) => {
     setSelectedFilter(filter);
   };
+
+  const filteredProducts = selectedFilter
+    ? products.filter((product) => product.category === selectedFilter)
+    : products;
 
   const handlePageChange = (pageNumber: number) => {
     setCurrentPage(pageNumber);
@@ -45,7 +44,20 @@ export const CatalogPage = () => {
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-  const filters = ["Уход за телом", "Уход за волосами", "Уход за лицом"];
+
+  const filters = [
+    "Уход за телом",
+    "Уход за руками",
+    "Уход за ногами",
+    "Уход за лицом",
+    "Уход за волосами",
+    "Средства для загара",
+    "Средства для бритья",
+    "Подарочные наборы",
+    "Гигиеническая продукция",
+    "Гигиена полости рта",
+    "Бумажная продукция",
+  ];
 
   return (
     <>
@@ -91,10 +103,13 @@ export const CatalogPage = () => {
                 onFilterClick={handleFilterClick}
               />
             </div>
-            <ProductList
-              products={products.slice(startIndex, endIndex)}
-              className={styles.list}
-            />
+            {filteredProducts.length ? (
+              <ProductList
+                products={filteredProducts.slice(startIndex, endIndex)}
+              />
+            ) : (
+              <div className={styles.message}>Нет в наличии на складе</div>
+            )}
           </div>
           <Pagination
             currentPage={currentPage}

@@ -4,8 +4,7 @@ import styles from "./styles.module.scss";
 import manufacturers from "../../services/products.json";
 import Wrapper from "../Wrapper/Wrapper";
 import { Product } from "../../services/products";
-import { FilterDepartures } from "../FilterDepartures/FilterDepartures";
-import { Filter } from "../Filter/Filter";
+import { FilterLeft } from "../FilterLeft/FilterLeft";
 
 interface IManufacturer {
   products: Product[];
@@ -18,7 +17,6 @@ interface Props {
 }
 
 export const FilterDown = ({ onClick }: Props) => {
-  const [selectedFilter, setSelectedFilter] = useState("");
   const [value, setValue] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const handleChange: React.ChangeEventHandler<HTMLSelectElement> = (event) => {
@@ -34,7 +32,10 @@ export const FilterDown = ({ onClick }: Props) => {
     }))
   );
 
-  const handleFilterSelect = (filter: string) => {
+  const [selectedFilter, setSelectedFilter] = useState("");
+  const filters = ["Уход за телом", "Уход за волосами", "Уход за лицом"];
+
+  const handleFilterClick = (filter: string) => {
     setSelectedFilter(filter);
   };
   const toggleShowSort = () => {
@@ -87,10 +88,11 @@ export const FilterDown = ({ onClick }: Props) => {
           </button>
         </div>
         {isOpen && (
-          <Filter
-            onFilterSelect={handleFilterSelect}
+          <FilterLeft
+            filters={filters}
             selectedFilter={selectedFilter}
-            onClick={onClick}/>
+            onFilterClick={handleFilterClick}
+          />
         )}
         <div className={styles.title}>ПОДБОР ПО ПАРАМЕТРАМ</div>
         <div className={styles.subtitle}>Цена ₸</div>

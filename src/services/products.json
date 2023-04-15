@@ -16,7 +16,7 @@
         },
         {
             "id": "2",
-            "category": "Бытовая химия",
+            "category": "Уход за руками",
             "popular": false,
             "image_url": "http://s3.amazonaws.com/donovanbailey/products/api_featured_images/000/001/004/original/open-uri20171227-4-1wp63cr?1514344255p",
             "name": "ARIEL",
@@ -86,7 +86,7 @@
         },
         {
             "id": "7",
-            "category": "Уход за лицом",
+            "category": "Уход за руками",
             "popular": false,
             "image_url": "http://s3.amazonaws.com/donovanbailey/products/api_featured_images/000/000/909/original/open-uri20171224-4-vt9rh6?1514082613",
             "name": "BLOOM",
@@ -114,7 +114,7 @@
         },
         {
             "id": "9",
-            "category": "Уход за телом",
+            "category": "Уход за ногам",
             "popular": true,
             "image_url": "http://s3.amazonaws.com/donovanbailey/products/api_featured_images/000/000/905/original/open-uri20171224-4-1tmsfyh?1514082604",
             "name": "Bloom cosmetics",
@@ -142,7 +142,7 @@
         },
         {
             "id": "11",
-            "category": "Уход за телом",
+            "category": "Уход за ногам",
             "popular": false,
             "image_url": "http://s3.amazonaws.com/donovanbailey/products/api_featured_images/000/000/900/original/open-uri20171224-4-1byvmqd?1514082593",
             "name": "CAMAY",
@@ -156,7 +156,7 @@
         },
         {
             "id": "12",
-            "category": "Уход за телом",
+            "category": "Уход за волосами",
             "popular": false,
             "image_url": "http://s3.amazonaws.com/donovanbailey/products/api_featured_images/000/000/894/original/data?1514082575",
             "name": "BIOMIO",
@@ -170,7 +170,7 @@
         },
         {
             "id": "13",
-            "category": "Бытовая химия",
+            "category": "Уход за волосами",
             "popular": true,
             "image_url": "http://s3.amazonaws.com/donovanbailey/products/api_featured_images/000/000/847/original/open-uri20171224-4-1se9mcb?1514074989",
             "name": "BIMAX",
@@ -184,7 +184,7 @@
         },
         {
             "id": "14",
-            "category": "Бытовая химия",
+            "category": "Гигиеническая продукция",
             "popular": true,
             "image_url": "http://s3.amazonaws.com/donovanbailey/products/api_featured_images/000/000/846/original/data?1514072602",
             "name": "PERSIL",
@@ -198,7 +198,7 @@
         },
         {
             "id": "15",
-            "category": "Бытовая химия",
+            "category": "Гигиеническая продукция",
             "popular": true,
             "image_url": "http://s3.amazonaws.com/donovanbailey/products/api_featured_images/000/000/840/original/open-uri20171223-4-scw918?1514072597",
             "name": "FAIRY",
@@ -212,7 +212,7 @@
         },
         {
             "id": "16",
-            "category": "Бытовая химия",
+            "category": "Подарочные наборы",
             "popular": true,
             "image_url": "http://s3.amazonaws.com/donovanbailey/products/api_featured_images/000/000/834/original/open-uri20171223-4-1b6qpa2?1514072593",
             "name": "FROSCH",
@@ -226,7 +226,7 @@
         },
         {
             "id": "17",
-            "category": "Бытовая химия",
+            "category": "Подарочные наборы",
             "popular": true,
             "image_url": "http://s3.amazonaws.com/donovanbailey/products/api_featured_images/000/000/786/original/data?1514072312",
             "name": "PRESTO",

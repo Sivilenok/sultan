@@ -10,6 +10,8 @@ import { useAppSelector, selectAllProducts } from "../../store";
 
 import styles from "./styles.module.scss";
 import Wrapper from "../../components/Wrapper/Wrapper";
+import { FilterUp } from "../../components/FilterUp/FilterUp";
+import { FilterLeft } from "../../components/FilterLeft/FilterLeft";
 
 export const CatalogPage = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -21,9 +23,10 @@ export const CatalogPage = () => {
   const startIndex = (currentPage - 1) * productsPerPage;
   const endIndex = startIndex + productsPerPage;
 
-  const handleFilterSelect = (filter: string) => {
+  const handleFilterClick = (filter: string) => {
     setSelectedFilter(filter);
   };
+
   const handlePageChange = (pageNumber: number) => {
     setCurrentPage(pageNumber);
     window.scrollTo(0, 0);
@@ -42,6 +45,7 @@ export const CatalogPage = () => {
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+  const filters = ["Уход за телом", "Уход за волосами", "Уход за лицом"];
 
   return (
     <>
@@ -73,20 +77,18 @@ export const CatalogPage = () => {
             <div className={styles.title}>Косметика и гигиена</div>
             <Sort />
           </div>
-          <Filter
+          <FilterUp
+            filters={filters}
             selectedFilter={selectedFilter}
-            onFilterSelect={handleFilterSelect}
-            onClick={handleClick}
-            className={styles.className}
+            onFilterClick={handleFilterClick}
           />
           <div className={styles.wrap}>
             <div className={styles.wrapFilters}>
               <FilterDown onClick={() => setShowDepartures(!showDepartures)} />
-              <Filter
-                onFilterSelect={handleFilterSelect}
+              <FilterLeft
+                filters={filters}
                 selectedFilter={selectedFilter}
-                onClick={handleClick}
-                className={styles.className}
+                onFilterClick={handleFilterClick}
               />
             </div>
             <ProductList

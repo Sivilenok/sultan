@@ -1,0 +1,28 @@
+@import "/src/ui/breakpoints.scss";
+
+.btnLeft {
+    background: none;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: #3f4e65;
+    padding: 5px 0;
+    cursor: pointer;
+  
+    &:hover {
+      color: #ffc85e;
+    }
+    &:active {
+      background-color: red;
+  }
+    @include mediaMobile {
+      line-height: 17px;
+    }
+  }
+
+  .filterLeft {
+    display: flex;
+    flex-direction: column;
+  }
+  

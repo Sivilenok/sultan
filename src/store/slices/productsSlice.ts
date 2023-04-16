@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { Product } from "../../services/products";
 
 interface ProductsState {
@@ -6,6 +6,11 @@ interface ProductsState {
   popular: Product[];
   cart: Product[];
   sortBy: "name" | "price";
+}
+
+interface FilterPayload {
+  minPrice: number;
+  maxPrice: number;
 }
 
 const initialState: ProductsState = {
@@ -47,9 +52,19 @@ export const productsSlice = createSlice({
         }
       });
     },
+    filterProductsByPrice: (state, action: PayloadAction<FilterPayload>) => {
+      const { minPrice, maxPrice } = action.payload;
+      state.all = state.all.filter((product) => {
+        return product.price >= minPrice && product.price <= maxPrice;
+      });
+    },
   },
 });
 
-export const { setAllProducts, setPopularProducts, addCartProduct } =
-  productsSlice.actions;
+export const {
+  setAllProducts,
+  setPopularProducts,
+  addCartProduct,
+  filterProductsByPrice,
+} = productsSlice.actions;
 export default productsSlice.reducer;

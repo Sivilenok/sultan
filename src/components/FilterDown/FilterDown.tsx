@@ -3,8 +3,8 @@ import { deleteBtn, down, downArrow, up, upArrow } from "../../assets";
 import styles from "./styles.module.scss";
 import manufacturers from "../../services/products.json";
 import Wrapper from "../Wrapper/Wrapper";
-import { Product } from "../../services/products";
 import { FilterLeft } from "../FilterLeft/FilterLeft";
+import { Product } from "../../services/products";
 
 interface IManufacturer {
   products: Product[];
@@ -34,10 +34,22 @@ export const FilterDown = ({ onClick }: Props) => {
 
   const [selectedFilter, setSelectedFilter] = useState("");
   const filters = ["Уход за телом", "Уход за волосами", "Уход за лицом"];
+  const [price, setPrice] = useState(0);
+
+  const handleClick = (amount: number) => {
+    if (amount === 0 && price === 0) {
+      return;
+    } else if (amount === 10000) {
+      setPrice((prevPrice) => Math.min(prevPrice + 1000, 10000));
+    } else {
+      setPrice((prevPrice) => Math.max(prevPrice - 1000, 0));
+    }
+  };
 
   const handleFilterClick = (filter: string) => {
     setSelectedFilter(filter);
   };
+
   const toggleShowSort = () => {
     setShowSort(!showShowSort);
     setArrowDirection(arrowDirection === "down" ? "up" : "down");
@@ -95,12 +107,17 @@ export const FilterDown = ({ onClick }: Props) => {
           />
         )}
         <div className={styles.title}>ПОДБОР ПО ПАРАМЕТРАМ</div>
-        <div className={styles.subtitle}>Цена ₸</div>
+        <div className={styles.subtitle}>{price} ₸</div>
         <div className={styles.count}>
-          <button className={styles.counter}>0</button>
+          <button className={styles.counter} onClick={() => handleClick(0)}>
+            0
+          </button>
           <div className={styles.quantity}>-</div>
-          <button className={styles.counter}>10 000</button>
+          <button className={styles.counter} onClick={() => handleClick(10000)}>
+            10000
+          </button>
         </div>
+
         <div className={styles.titleTwo}>Производитель</div>
         <select className={styles.search} value={value} onChange={handleChange}>
           <option value="" disabled>

@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { FilterDown, Pagination, ProductList, Sort } from "../../components";
 import { useAppSelector, selectAllProducts } from "../../store";
-
 import styles from "./styles.module.scss";
 import Wrapper from "../../components/Wrapper/Wrapper";
 import { FilterUp } from "../../components/FilterUp/FilterUp";
@@ -22,16 +21,12 @@ export const CatalogPage = () => {
   };
 
   const filteredProducts = selectedFilter
-    ? products.filter((product) => product.category === selectedFilter)
-    : products;
+  ? products.filter((product) => product.category === selectedFilter)
+  : products;
 
   const handlePageChange = (pageNumber: number) => {
     setCurrentPage(pageNumber);
     window.scrollTo(0, 0);
-  };
-
-  const handleClick = () => {
-    console.log("Кнопка нажата");
   };
 
   useEffect(() => {

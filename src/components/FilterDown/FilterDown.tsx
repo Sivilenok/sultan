@@ -17,6 +17,9 @@ interface Props {
 }
 
 export const FilterDown = ({ onClick }: Props) => {
+  const [showFilteredProducts, setShowFilteredProducts] = useState(false);
+  const [products, setProducts] = useState<Product[]>([]); // replace Product with your product interface/type
+
   const [value, setValue] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const handleChange: React.ChangeEventHandler<HTMLSelectElement> = (event) => {
@@ -24,14 +27,29 @@ export const FilterDown = ({ onClick }: Props) => {
   };
   const [showShowSort, setShowSort] = useState(false);
   const [arrowDirection, setArrowDirection] = useState("down");
-  const [manufacturerList, setManufacturerList] = useState<IManufacturer[]>(
-    manufacturers.products.map((product: Product) => ({
-      manufacturer: product.manufacturer,
-      products: [product],
-      selected: false,
-    }))
+  const [selectedManufacturers, setSelectedManufacturers] = useState<string[]>(
+    []
   );
-
+  const [manufacturerList, setManufacturerList] = useState<IManufacturer[]>(
+    manufacturers.products.reduce(
+      (accumulator: IManufacturer[], currentProduct: Product) => {
+        const existingManufacturer = accumulator.find(
+          (item) => item.manufacturer === currentProduct.manufacturer
+        );
+        if (existingManufacturer) {
+          existingManufacturer.products.push(currentProduct);
+        } else {
+          accumulator.push({
+            manufacturer: currentProduct.manufacturer,
+            products: [currentProduct],
+            selected: false,
+          });
+        }
+        return accumulator;
+      },
+      []
+    )
+  );
   const [selectedFilter, setSelectedFilter] = useState("");
   const filters = ["Уход за телом", "Уход за волосами", "Уход за лицом"];
   const [price, setPrice] = useState(0);
@@ -67,24 +85,40 @@ export const FilterDown = ({ onClick }: Props) => {
     });
   };
 
-  const handleManufacturerChange = (index: number) => {
-    setManufacturerList((prevList) => {
-      const newList = [...prevList];
-      newList[index].selected = !newList[index].selected;
-      return newList;
-    });
-  };
-
-  const selectedManufacturers = manufacturerList
-    .filter((manufacturer) => manufacturer.selected)
-    .map((manufacturer) => manufacturer.manufacturer);
-
   const dropdownManufacturers = manufacturers.products.filter(
     (manufacturer) => !selectedManufacturers.includes(manufacturer.manufacturer)
   );
+
+  const handleManufacturerChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const manufacturer = event.target.value;
+    const isChecked = event.target.checked;
+
+    const updatedList = manufacturerList.map((item) => {
+      if (item.manufacturer === manufacturer) {
+        item.selected = isChecked;
+      }
+      return item;
+    });
+
+    if (isChecked) {
+      setSelectedManufacturers([...selectedManufacturers, manufacturer]);
+    } else {
+      setSelectedManufacturers(
+        selectedManufacturers.filter((m) => m !== manufacturer)
+      );
+    }
+
+    setManufacturerList(updatedList);
+  };
+
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
+  const handleShowFilteredProducts = () => {
+    setShowFilteredProducts(true);
+  }
 
   return (
     <div className={styles.selection}>
@@ -141,9 +175,13 @@ export const FilterDown = ({ onClick }: Props) => {
               <div key={index}>
                 <input
                   type="checkbox"
-                  checked={manufacturer.selected}
-                  onChange={() => handleManufacturerChange(index)}
+                  value={manufacturer.manufacturer}
+                  checked={selectedManufacturers.includes(
+                    manufacturer.manufacturer
+                  )}
+                  onChange={handleManufacturerChange}
                 />
+
                 <span className={styles.manName}>
                   {manufacturer.manufacturer}
                 </span>
@@ -171,13 +209,16 @@ export const FilterDown = ({ onClick }: Props) => {
                   (manufacturer) =>
                     !selectedManufacturers.includes(manufacturer.manufacturer)
                 )
-
+                .slice(4)
                 .map((manufacturer, index) => (
                   <div key={index}>
                     <input
                       type="checkbox"
-                      checked={manufacturer.selected}
-                      onChange={() => handleManufacturerChange(index)}
+                      value={manufacturer.manufacturer}
+                      checked={selectedManufacturers.includes(
+                        manufacturer.manufacturer
+                      )}
+                      onChange={handleManufacturerChange}
                     />
                     <span className={styles.manName}>
                       {manufacturer.manufacturer}
@@ -186,10 +227,11 @@ export const FilterDown = ({ onClick }: Props) => {
                 ))}
             </div>
           </div>
+
           <div className={styles.separator}></div>
         </div>
         <div className={styles.btnWrap}>
-          <button className={styles.btn}>Показать</button>
+        <button className={styles.btn} onClick={handleShowFilteredProducts}>Показать</button>
           <img src={deleteBtn} alt="deleteBtn" className={styles.deleteBtn} />
         </div>
       </Wrapper>

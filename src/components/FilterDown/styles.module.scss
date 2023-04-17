@@ -62,6 +62,9 @@
   font-size: 12px;
   line-height: 15px;
   color: #3f4e65;
+  &:hover {
+    box-shadow: 0 0 10px #ffc85e;
+  }
 }
 
 .quantity {

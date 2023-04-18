@@ -13,4 +13,3 @@ module.exports = {
         html: fs.readFileSync(path.resolve(".") + "/public/index.html", 'utf8'),
       },
   };
-  

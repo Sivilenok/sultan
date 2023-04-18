@@ -4,7 +4,7 @@ import styles from "./styles.module.scss";
 import React from "react";
 import Wrapper from "../Wrapper/Wrapper";
 
-export const Breadcrumb = () => {
+export const Breadcrumb = ({onClick}: any) => {
   const crumbs = [];
   const currentPath = useLocation().pathname;
 
@@ -73,7 +73,7 @@ export const Breadcrumb = () => {
             <React.Fragment key={index}>
               {item}
               {index < breadcrumbItems.length - 1 && (
-                <div className={styles.separator} />
+                <div onClick={onClick} className={styles.separator} />
               )}
             </React.Fragment>
           ))}
